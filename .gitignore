@@ -34,3 +34,6 @@ report*.json
 
 # Windows
 Thumbs.db
+
+# Git worktrees (superpowers)
+.worktrees/
