@@ -1,4 +1,36 @@
+# Dependências
 node_modules/
+
+# Cache in-memory persistido em disco (gerado em runtime)
 cache/
+
+# Variáveis de ambiente (nunca commitar)
 .env
+.env.local
+.env.*.local
+
+# Logs
 *.log
+npm-debug.log*
+
+# Cobertura de testes
+coverage/
+
+# Arquivos de análise locais (outputs gerados manualmente)
+analise*.json
+report*.md
+report*.json
+
+# Editores
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
