@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find \"C:\\\\Users\\\\user\\\\Documents\\\\GitHub\\\\funnel-analyzer\\\\src\" -type f -name \"*.js\" 2>/dev/null | head -20)"
+    ]
+  }
+}
