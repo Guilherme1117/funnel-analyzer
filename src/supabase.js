@@ -48,14 +48,18 @@ async function fetchAllChats(accountId) {
   });
 }
 
-async function fetchMessagesForChats(chatIds) {
+async function fetchMessagesForChats(chatIds, dateRange) {
   const allMessages = [];
   for (let i = 0; i < chatIds.length; i += BATCH_SIZE) {
     const batch = chatIds.slice(i, i + BATCH_SIZE);
     const filter = batch.join(',');
+    let query = `?chat_id=in.(${filter})&select=id,chat_id,direction,sent_by,content_text,created_at,message_type&order=created_at.asc&limit=10000`;
+    if (dateRange) {
+      query += `&created_at=gte.${dateRange.startDate}&created_at=lte.${dateRange.endDate}`;
+    }
     const msgs = await supabaseRequest({
       path: '/rest/v1/wa_messages',
-      query: `?chat_id=in.(${filter})&select=id,chat_id,direction,sent_by,content_text,created_at,message_type&order=created_at.asc&limit=10000`
+      query
     });
     allMessages.push(...msgs);
   }
@@ -71,12 +75,18 @@ function groupMessagesByChat(messages) {
   return map;
 }
 
-async function fetchConversations(accountId) {
+async function fetchConversations(accountId, dateRange) {
   const chats = await fetchAllChats(accountId);
   const chatIds = chats.map(c => c.id);
-  const messages = await fetchMessagesForChats(chatIds);
+  const messages = await fetchMessagesForChats(chatIds, dateRange);
   const messagesByChat = groupMessagesByChat(messages);
-  return { chats, messagesByChat, totalMessages: messages.length };
+
+  // When filtering by date, only include chats that have messages in range
+  const filteredChats = dateRange
+    ? chats.filter(c => messagesByChat[c.id] && messagesByChat[c.id].length > 0)
+    : chats;
+
+  return { chats: filteredChats, messagesByChat, totalMessages: messages.length };
 }
 
 module.exports = { fetchConversations, supabaseRequest };
