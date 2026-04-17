@@ -90,6 +90,36 @@ describe('getConfig', () => {
 });
 
 // ─────────────────────────────────────────────
+// getConfigById
+// ─────────────────────────────────────────────
+describe('getConfigById', () => {
+  it('retorna o config quando encontrado por id', async () => {
+    mockSupabaseRequest.mockResolvedValue([{
+      id: CONFIG_ID, account_id: ACCOUNT_ID, stage_config: STAGE_CONFIG
+    }]);
+
+    const result = await repository.getConfigById(CONFIG_ID);
+
+    expect(result.id).toBe(CONFIG_ID);
+    expect(result.stage_config).toEqual(STAGE_CONFIG);
+    const call = mockSupabaseRequest.mock.calls[0][0];
+    expect(call.query).toContain(`id=eq.${CONFIG_ID}`);
+  });
+
+  it('retorna null quando não encontrado (array vazio)', async () => {
+    mockSupabaseRequest.mockResolvedValue([]);
+    const result = await repository.getConfigById(CONFIG_ID);
+    expect(result).toBeNull();
+  });
+
+  it('retorna null quando supabase retorna null', async () => {
+    mockSupabaseRequest.mockResolvedValue(null);
+    const result = await repository.getConfigById(CONFIG_ID);
+    expect(result).toBeNull();
+  });
+});
+
+// ─────────────────────────────────────────────
 // saveRun
 // ─────────────────────────────────────────────
 describe('saveRun', () => {

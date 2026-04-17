@@ -39,6 +39,18 @@ async function getConfig(accountId) {
 }
 
 /**
+ * Busca um stageConfig pelo ID do registro.
+ * Retorna null se não encontrado.
+ */
+async function getConfigById(configId) {
+  const rows = await supabaseRequest({
+    path: '/rest/v1/funnel_configs',
+    query: `?id=eq.${configId}&select=id,account_id,prompt_hash,stage_config,created_at,updated_at&limit=1`
+  });
+  return Array.isArray(rows) && rows.length > 0 ? rows[0] : null;
+}
+
+/**
  * Persiste uma execução completa de análise.
  * Insere analysis_runs, depois analysis_conversations em batch,
  * depois analysis_events em batch.
@@ -182,4 +194,4 @@ async function getRunDetail(runId) {
   return { ...run, conversations: Array.isArray(conversations) ? conversations : [] };
 }
 
-module.exports = { saveConfig, getConfig, saveRun, getRuns, getRunDetail };
+module.exports = { saveConfig, getConfig, getConfigById, saveRun, getRuns, getRunDetail };
