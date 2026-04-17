@@ -30,9 +30,15 @@ async function supabaseRequest({ method = 'GET', path, query = '', body, extraHe
   const res = await fetch(fullUrl, options);
   if (!res.ok) throw new Error(`Supabase error ${res.status}: ${await res.text()}`);
 
-  // 204 No Content → return empty object
+  // 204 No Content → empty body (sem JSON para parsear)
   if (res.status === 204) return {};
-  return res.json();
+
+  // Lê o body como texto primeiro para evitar SyntaxError em body vazio.
+  // PostgREST pode retornar 200/201 com body vazio em edge cases
+  // (ex: RLS bloqueia SELECT do row recém-inserido, ou return=minimal).
+  const text = await res.text();
+  if (!text) return {};
+  return JSON.parse(text);
 }
 
 async function fetchAllChats(accountId) {
