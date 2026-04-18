@@ -1,0 +1,1645 @@
+{
+    "meta": {
+        "account_id": "35175698-eb37-47c4-8788-478647099b07",
+        "analyzed_at": "2026-04-18T14:56:59.038Z",
+        "total_chats": 131,
+        "professional": 54,
+        "personal": 77,
+        "total_messages": 999,
+        "period": {
+            "start": "2026-04-13T00:00:00Z",
+            "end": "2026-04-18T23:59:59Z"
+        }
+    },
+    "funnel": {
+        "overview": {
+            "total": 54
+        },
+        "tracks": {
+            "pure_ia": {
+                "count": 44,
+                "with_last_stage": 42,
+                "engagement_pct": 95.5
+            },
+            "pure_human": {
+                "count": 0,
+                "with_last_stage": 0,
+                "engagement_pct": 0
+            },
+            "hybrid": {
+                "count": 10,
+                "with_last_stage": 10,
+                "engagement_pct": 100
+            },
+            "no_outbound": {
+                "count": 0,
+                "with_last_stage": 0,
+                "engagement_pct": 0
+            }
+        },
+        "stages": [
+            {
+                "code": "SAUDACAO",
+                "reach": 16,
+                "reach_pct": 29.6,
+                "by_ia": 15,
+                "by_human": 1
+            },
+            {
+                "code": "QUEIXA_PACIENTE",
+                "reach": 33,
+                "reach_pct": 61.1,
+                "by_ia": 17,
+                "by_human": 5
+            },
+            {
+                "code": "VALIDACAO_QUEIXA",
+                "reach": 18,
+                "reach_pct": 33.3,
+                "by_ia": 18,
+                "by_human": 0
+            },
+            {
+                "code": "APROFUNDAMENTO",
+                "reach": 13,
+                "reach_pct": 24.1,
+                "by_ia": 13,
+                "by_human": 0
+            },
+            {
+                "code": "PONTE_TRATAMENTO",
+                "reach": 18,
+                "reach_pct": 33.3,
+                "by_ia": 18,
+                "by_human": 0
+            },
+            {
+                "code": "EXPLICACAO_GB",
+                "reach": 25,
+                "reach_pct": 46.3,
+                "by_ia": 18,
+                "by_human": 4
+            },
+            {
+                "code": "CONVITE_AVALIACAO",
+                "reach": 31,
+                "reach_pct": 57.4,
+                "by_ia": 31,
+                "by_human": 0
+            },
+            {
+                "code": "PERGUNTA_INVESTIMENTO",
+                "reach": 19,
+                "reach_pct": 35.2,
+                "by_ia": 16,
+                "by_human": 0
+            },
+            {
+                "code": "INVESTIMENTO_CONSULTA",
+                "reach": 15,
+                "reach_pct": 27.8,
+                "by_ia": 15,
+                "by_human": 0
+            },
+            {
+                "code": "RESPOSTA_GB_SEM_QUEIXA",
+                "reach": 2,
+                "reach_pct": 3.7,
+                "by_ia": 2,
+                "by_human": 0
+            },
+            {
+                "code": "INVESTIMENTO_GB_INFORMADO",
+                "reach": 2,
+                "reach_pct": 3.7,
+                "by_ia": 2,
+                "by_human": 0
+            },
+            {
+                "code": "INVESTIMENTO_FIOS",
+                "reach": 6,
+                "reach_pct": 11.1,
+                "by_ia": 6,
+                "by_human": 0
+            },
+            {
+                "code": "OBJECAO_PRECO",
+                "reach": 5,
+                "reach_pct": 9.3,
+                "by_ia": 4,
+                "by_human": 0
+            },
+            {
+                "code": "CONTORNO_OBJECAO",
+                "reach": 1,
+                "reach_pct": 1.9,
+                "by_ia": 1,
+                "by_human": 0
+            },
+            {
+                "code": "PERGUNTA_CONVENIO",
+                "reach": 0,
+                "reach_pct": 0,
+                "by_ia": 0,
+                "by_human": 0
+            },
+            {
+                "code": "RESPOSTA_CONVENIO",
+                "reach": 3,
+                "reach_pct": 5.6,
+                "by_ia": 3,
+                "by_human": 0
+            },
+            {
+                "code": "PERGUNTA_LOCALIZACAO",
+                "reach": 1,
+                "reach_pct": 1.9,
+                "by_ia": 0,
+                "by_human": 0
+            },
+            {
+                "code": "RESPOSTA_LOCALIZACAO",
+                "reach": 2,
+                "reach_pct": 3.7,
+                "by_ia": 2,
+                "by_human": 0
+            },
+            {
+                "code": "QUALIFICACAO_CIDADE",
+                "reach": 5,
+                "reach_pct": 9.3,
+                "by_ia": 5,
+                "by_human": 0
+            },
+            {
+                "code": "CONSULTA_ONLINE",
+                "reach": 3,
+                "reach_pct": 5.6,
+                "by_ia": 3,
+                "by_human": 0
+            },
+            {
+                "code": "INTENCAO_AGENDAR",
+                "reach": 9,
+                "reach_pct": 16.7,
+                "by_ia": 6,
+                "by_human": 0
+            },
+            {
+                "code": "COLETA_DADOS",
+                "reach": 20,
+                "reach_pct": 37,
+                "by_ia": 20,
+                "by_human": 0
+            },
+            {
+                "code": "EBOOK_OFERTA",
+                "reach": 11,
+                "reach_pct": 20.4,
+                "by_ia": 11,
+                "by_human": 0
+            },
+            {
+                "code": "EBOOK_ACEITE",
+                "reach": 1,
+                "reach_pct": 1.9,
+                "by_ia": 0,
+                "by_human": 0
+            },
+            {
+                "code": "HANDOFF_AGENDAMENTO",
+                "reach": 9,
+                "reach_pct": 16.7,
+                "by_ia": 9,
+                "by_human": 0
+            },
+            {
+                "code": "HANDOFF_EBOOK",
+                "reach": 7,
+                "reach_pct": 13,
+                "by_ia": 7,
+                "by_human": 0
+            },
+            {
+                "code": "PACIENTE_RECORRENTE",
+                "reach": 0,
+                "reach_pct": 0,
+                "by_ia": 0,
+                "by_human": 0
+            }
+        ],
+        "conversion": [
+            {
+                "from": "SAUDACAO",
+                "to": "QUEIXA_PACIENTE",
+                "rate_pct": 37.5
+            },
+            {
+                "from": "SAUDACAO",
+                "to": "VALIDACAO_QUEIXA",
+                "rate_pct": 18.8
+            },
+            {
+                "from": "SAUDACAO",
+                "to": "APROFUNDAMENTO",
+                "rate_pct": 25
+            },
+            {
+                "from": "SAUDACAO",
+                "to": "PONTE_TRATAMENTO",
+                "rate_pct": 25
+            },
+            {
+                "from": "SAUDACAO",
+                "to": "EXPLICACAO_GB",
+                "rate_pct": 31.3
+            },
+            {
+                "from": "SAUDACAO",
+                "to": "CONVITE_AVALIACAO",
+                "rate_pct": 43.8
+            },
+            {
+                "from": "SAUDACAO",
+                "to": "PERGUNTA_INVESTIMENTO",
+                "rate_pct": 18.8
+            },
+            {
+                "from": "SAUDACAO",
+                "to": "INVESTIMENTO_CONSULTA",
+                "rate_pct": 25
+            },
+            {
+                "from": "SAUDACAO",
+                "to": "INVESTIMENTO_FIOS",
+                "rate_pct": 12.5
+            },
+            {
+                "from": "SAUDACAO",
+                "to": "OBJECAO_PRECO",
+                "rate_pct": 12.5
+            },
+            {
+                "from": "SAUDACAO",
+                "to": "RESPOSTA_CONVENIO",
+                "rate_pct": 12.5
+            },
+            {
+                "from": "SAUDACAO",
+                "to": "RESPOSTA_LOCALIZACAO",
+                "rate_pct": 6.3
+            },
+            {
+                "from": "SAUDACAO",
+                "to": "QUALIFICACAO_CIDADE",
+                "rate_pct": 6.3
+            },
+            {
+                "from": "SAUDACAO",
+                "to": "COLETA_DADOS",
+                "rate_pct": 31.3
+            },
+            {
+                "from": "SAUDACAO",
+                "to": "EBOOK_OFERTA",
+                "rate_pct": 18.8
+            },
+            {
+                "from": "SAUDACAO",
+                "to": "HANDOFF_AGENDAMENTO",
+                "rate_pct": 6.3
+            },
+            {
+                "from": "SAUDACAO",
+                "to": "HANDOFF_EBOOK",
+                "rate_pct": 12.5
+            },
+            {
+                "from": "QUEIXA_PACIENTE",
+                "to": "VALIDACAO_QUEIXA",
+                "rate_pct": 39.4
+            },
+            {
+                "from": "QUEIXA_PACIENTE",
+                "to": "APROFUNDAMENTO",
+                "rate_pct": 33.3
+            },
+            {
+                "from": "QUEIXA_PACIENTE",
+                "to": "PONTE_TRATAMENTO",
+                "rate_pct": 54.5
+            },
+            {
+                "from": "QUEIXA_PACIENTE",
+                "to": "EXPLICACAO_GB",
+                "rate_pct": 48.5
+            },
+            {
+                "from": "QUEIXA_PACIENTE",
+                "to": "CONVITE_AVALIACAO",
+                "rate_pct": 72.7
+            },
+            {
+                "from": "QUEIXA_PACIENTE",
+                "to": "PERGUNTA_INVESTIMENTO",
+                "rate_pct": 30.3
+            },
+            {
+                "from": "QUEIXA_PACIENTE",
+                "to": "INVESTIMENTO_CONSULTA",
+                "rate_pct": 33.3
+            },
+            {
+                "from": "QUEIXA_PACIENTE",
+                "to": "INVESTIMENTO_GB_INFORMADO",
+                "rate_pct": 6.1
+            },
+            {
+                "from": "QUEIXA_PACIENTE",
+                "to": "INVESTIMENTO_FIOS",
+                "rate_pct": 12.1
+            },
+            {
+                "from": "QUEIXA_PACIENTE",
+                "to": "OBJECAO_PRECO",
+                "rate_pct": 9.1
+            },
+            {
+                "from": "QUEIXA_PACIENTE",
+                "to": "CONTORNO_OBJECAO",
+                "rate_pct": 3
+            },
+            {
+                "from": "QUEIXA_PACIENTE",
+                "to": "RESPOSTA_CONVENIO",
+                "rate_pct": 3
+            },
+            {
+                "from": "QUEIXA_PACIENTE",
+                "to": "RESPOSTA_LOCALIZACAO",
+                "rate_pct": 3
+            },
+            {
+                "from": "QUEIXA_PACIENTE",
+                "to": "QUALIFICACAO_CIDADE",
+                "rate_pct": 9.1
+            },
+            {
+                "from": "QUEIXA_PACIENTE",
+                "to": "CONSULTA_ONLINE",
+                "rate_pct": 9.1
+            },
+            {
+                "from": "QUEIXA_PACIENTE",
+                "to": "INTENCAO_AGENDAR",
+                "rate_pct": 24.2
+            },
+            {
+                "from": "QUEIXA_PACIENTE",
+                "to": "COLETA_DADOS",
+                "rate_pct": 42.4
+            },
+            {
+                "from": "QUEIXA_PACIENTE",
+                "to": "EBOOK_OFERTA",
+                "rate_pct": 30.3
+            },
+            {
+                "from": "QUEIXA_PACIENTE",
+                "to": "EBOOK_ACEITE",
+                "rate_pct": 3
+            },
+            {
+                "from": "QUEIXA_PACIENTE",
+                "to": "HANDOFF_AGENDAMENTO",
+                "rate_pct": 24.2
+            },
+            {
+                "from": "QUEIXA_PACIENTE",
+                "to": "HANDOFF_EBOOK",
+                "rate_pct": 21.2
+            },
+            {
+                "from": "VALIDACAO_QUEIXA",
+                "to": "APROFUNDAMENTO",
+                "rate_pct": 44.4
+            },
+            {
+                "from": "VALIDACAO_QUEIXA",
+                "to": "PONTE_TRATAMENTO",
+                "rate_pct": 66.7
+            },
+            {
+                "from": "VALIDACAO_QUEIXA",
+                "to": "EXPLICACAO_GB",
+                "rate_pct": 50
+            },
+            {
+                "from": "VALIDACAO_QUEIXA",
+                "to": "CONVITE_AVALIACAO",
+                "rate_pct": 94.4
+            },
+            {
+                "from": "VALIDACAO_QUEIXA",
+                "to": "PERGUNTA_INVESTIMENTO",
+                "rate_pct": 38.9
+            },
+            {
+                "from": "VALIDACAO_QUEIXA",
+                "to": "INVESTIMENTO_CONSULTA",
+                "rate_pct": 44.4
+            },
+            {
+                "from": "VALIDACAO_QUEIXA",
+                "to": "INVESTIMENTO_GB_INFORMADO",
+                "rate_pct": 5.6
+            },
+            {
+                "from": "VALIDACAO_QUEIXA",
+                "to": "INVESTIMENTO_FIOS",
+                "rate_pct": 27.8
+            },
+            {
+                "from": "VALIDACAO_QUEIXA",
+                "to": "OBJECAO_PRECO",
+                "rate_pct": 16.7
+            },
+            {
+                "from": "VALIDACAO_QUEIXA",
+                "to": "CONTORNO_OBJECAO",
+                "rate_pct": 5.6
+            },
+            {
+                "from": "VALIDACAO_QUEIXA",
+                "to": "RESPOSTA_LOCALIZACAO",
+                "rate_pct": 5.6
+            },
+            {
+                "from": "VALIDACAO_QUEIXA",
+                "to": "QUALIFICACAO_CIDADE",
+                "rate_pct": 11.1
+            },
+            {
+                "from": "VALIDACAO_QUEIXA",
+                "to": "CONSULTA_ONLINE",
+                "rate_pct": 16.7
+            },
+            {
+                "from": "VALIDACAO_QUEIXA",
+                "to": "INTENCAO_AGENDAR",
+                "rate_pct": 27.8
+            },
+            {
+                "from": "VALIDACAO_QUEIXA",
+                "to": "COLETA_DADOS",
+                "rate_pct": 55.6
+            },
+            {
+                "from": "VALIDACAO_QUEIXA",
+                "to": "EBOOK_OFERTA",
+                "rate_pct": 38.9
+            },
+            {
+                "from": "VALIDACAO_QUEIXA",
+                "to": "HANDOFF_AGENDAMENTO",
+                "rate_pct": 33.3
+            },
+            {
+                "from": "VALIDACAO_QUEIXA",
+                "to": "HANDOFF_EBOOK",
+                "rate_pct": 27.8
+            },
+            {
+                "from": "APROFUNDAMENTO",
+                "to": "PONTE_TRATAMENTO",
+                "rate_pct": 61.5
+            },
+            {
+                "from": "APROFUNDAMENTO",
+                "to": "EXPLICACAO_GB",
+                "rate_pct": 53.8
+            },
+            {
+                "from": "APROFUNDAMENTO",
+                "to": "CONVITE_AVALIACAO",
+                "rate_pct": 61.5
+            },
+            {
+                "from": "APROFUNDAMENTO",
+                "to": "PERGUNTA_INVESTIMENTO",
+                "rate_pct": 30.8
+            },
+            {
+                "from": "APROFUNDAMENTO",
+                "to": "INVESTIMENTO_CONSULTA",
+                "rate_pct": 38.5
+            },
+            {
+                "from": "APROFUNDAMENTO",
+                "to": "INVESTIMENTO_GB_INFORMADO",
+                "rate_pct": 7.7
+            },
+            {
+                "from": "APROFUNDAMENTO",
+                "to": "OBJECAO_PRECO",
+                "rate_pct": 7.7
+            },
+            {
+                "from": "APROFUNDAMENTO",
+                "to": "CONTORNO_OBJECAO",
+                "rate_pct": 7.7
+            },
+            {
+                "from": "APROFUNDAMENTO",
+                "to": "QUALIFICACAO_CIDADE",
+                "rate_pct": 7.7
+            },
+            {
+                "from": "APROFUNDAMENTO",
+                "to": "CONSULTA_ONLINE",
+                "rate_pct": 15.4
+            },
+            {
+                "from": "APROFUNDAMENTO",
+                "to": "INTENCAO_AGENDAR",
+                "rate_pct": 30.8
+            },
+            {
+                "from": "APROFUNDAMENTO",
+                "to": "COLETA_DADOS",
+                "rate_pct": 46.2
+            },
+            {
+                "from": "APROFUNDAMENTO",
+                "to": "EBOOK_OFERTA",
+                "rate_pct": 15.4
+            },
+            {
+                "from": "APROFUNDAMENTO",
+                "to": "HANDOFF_AGENDAMENTO",
+                "rate_pct": 38.5
+            },
+            {
+                "from": "APROFUNDAMENTO",
+                "to": "HANDOFF_EBOOK",
+                "rate_pct": 15.4
+            },
+            {
+                "from": "PONTE_TRATAMENTO",
+                "to": "EXPLICACAO_GB",
+                "rate_pct": 55.6
+            },
+            {
+                "from": "PONTE_TRATAMENTO",
+                "to": "CONVITE_AVALIACAO",
+                "rate_pct": 83.3
+            },
+            {
+                "from": "PONTE_TRATAMENTO",
+                "to": "PERGUNTA_INVESTIMENTO",
+                "rate_pct": 33.3
+            },
+            {
+                "from": "PONTE_TRATAMENTO",
+                "to": "INVESTIMENTO_CONSULTA",
+                "rate_pct": 44.4
+            },
+            {
+                "from": "PONTE_TRATAMENTO",
+                "to": "INVESTIMENTO_GB_INFORMADO",
+                "rate_pct": 11.1
+            },
+            {
+                "from": "PONTE_TRATAMENTO",
+                "to": "INVESTIMENTO_FIOS",
+                "rate_pct": 5.6
+            },
+            {
+                "from": "PONTE_TRATAMENTO",
+                "to": "CONTORNO_OBJECAO",
+                "rate_pct": 5.6
+            },
+            {
+                "from": "PONTE_TRATAMENTO",
+                "to": "RESPOSTA_LOCALIZACAO",
+                "rate_pct": 5.6
+            },
+            {
+                "from": "PONTE_TRATAMENTO",
+                "to": "QUALIFICACAO_CIDADE",
+                "rate_pct": 11.1
+            },
+            {
+                "from": "PONTE_TRATAMENTO",
+                "to": "CONSULTA_ONLINE",
+                "rate_pct": 5.6
+            },
+            {
+                "from": "PONTE_TRATAMENTO",
+                "to": "INTENCAO_AGENDAR",
+                "rate_pct": 27.8
+            },
+            {
+                "from": "PONTE_TRATAMENTO",
+                "to": "COLETA_DADOS",
+                "rate_pct": 55.6
+            },
+            {
+                "from": "PONTE_TRATAMENTO",
+                "to": "EBOOK_OFERTA",
+                "rate_pct": 27.8
+            },
+            {
+                "from": "PONTE_TRATAMENTO",
+                "to": "HANDOFF_AGENDAMENTO",
+                "rate_pct": 44.4
+            },
+            {
+                "from": "PONTE_TRATAMENTO",
+                "to": "HANDOFF_EBOOK",
+                "rate_pct": 16.7
+            },
+            {
+                "from": "EXPLICACAO_GB",
+                "to": "CONVITE_AVALIACAO",
+                "rate_pct": 64
+            },
+            {
+                "from": "EXPLICACAO_GB",
+                "to": "PERGUNTA_INVESTIMENTO",
+                "rate_pct": 24
+            },
+            {
+                "from": "EXPLICACAO_GB",
+                "to": "INVESTIMENTO_CONSULTA",
+                "rate_pct": 32
+            },
+            {
+                "from": "EXPLICACAO_GB",
+                "to": "RESPOSTA_GB_SEM_QUEIXA",
+                "rate_pct": 4
+            },
+            {
+                "from": "EXPLICACAO_GB",
+                "to": "INVESTIMENTO_GB_INFORMADO",
+                "rate_pct": 8
+            },
+            {
+                "from": "EXPLICACAO_GB",
+                "to": "INVESTIMENTO_FIOS",
+                "rate_pct": 4
+            },
+            {
+                "from": "EXPLICACAO_GB",
+                "to": "OBJECAO_PRECO",
+                "rate_pct": 8
+            },
+            {
+                "from": "EXPLICACAO_GB",
+                "to": "CONTORNO_OBJECAO",
+                "rate_pct": 4
+            },
+            {
+                "from": "EXPLICACAO_GB",
+                "to": "RESPOSTA_LOCALIZACAO",
+                "rate_pct": 4
+            },
+            {
+                "from": "EXPLICACAO_GB",
+                "to": "QUALIFICACAO_CIDADE",
+                "rate_pct": 12
+            },
+            {
+                "from": "EXPLICACAO_GB",
+                "to": "CONSULTA_ONLINE",
+                "rate_pct": 8
+            },
+            {
+                "from": "EXPLICACAO_GB",
+                "to": "INTENCAO_AGENDAR",
+                "rate_pct": 16
+            },
+            {
+                "from": "EXPLICACAO_GB",
+                "to": "COLETA_DADOS",
+                "rate_pct": 44
+            },
+            {
+                "from": "EXPLICACAO_GB",
+                "to": "EBOOK_OFERTA",
+                "rate_pct": 24
+            },
+            {
+                "from": "EXPLICACAO_GB",
+                "to": "EBOOK_ACEITE",
+                "rate_pct": 4
+            },
+            {
+                "from": "EXPLICACAO_GB",
+                "to": "HANDOFF_AGENDAMENTO",
+                "rate_pct": 28
+            },
+            {
+                "from": "EXPLICACAO_GB",
+                "to": "HANDOFF_EBOOK",
+                "rate_pct": 16
+            },
+            {
+                "from": "CONVITE_AVALIACAO",
+                "to": "PERGUNTA_INVESTIMENTO",
+                "rate_pct": 38.7
+            },
+            {
+                "from": "CONVITE_AVALIACAO",
+                "to": "INVESTIMENTO_CONSULTA",
+                "rate_pct": 48.4
+            },
+            {
+                "from": "CONVITE_AVALIACAO",
+                "to": "RESPOSTA_GB_SEM_QUEIXA",
+                "rate_pct": 3.2
+            },
+            {
+                "from": "CONVITE_AVALIACAO",
+                "to": "INVESTIMENTO_GB_INFORMADO",
+                "rate_pct": 6.5
+            },
+            {
+                "from": "CONVITE_AVALIACAO",
+                "to": "INVESTIMENTO_FIOS",
+                "rate_pct": 6.5
+            },
+            {
+                "from": "CONVITE_AVALIACAO",
+                "to": "OBJECAO_PRECO",
+                "rate_pct": 3.2
+            },
+            {
+                "from": "CONVITE_AVALIACAO",
+                "to": "CONTORNO_OBJECAO",
+                "rate_pct": 3.2
+            },
+            {
+                "from": "CONVITE_AVALIACAO",
+                "to": "RESPOSTA_CONVENIO",
+                "rate_pct": 6.5
+            },
+            {
+                "from": "CONVITE_AVALIACAO",
+                "to": "RESPOSTA_LOCALIZACAO",
+                "rate_pct": 3.2
+            },
+            {
+                "from": "CONVITE_AVALIACAO",
+                "to": "QUALIFICACAO_CIDADE",
+                "rate_pct": 9.7
+            },
+            {
+                "from": "CONVITE_AVALIACAO",
+                "to": "CONSULTA_ONLINE",
+                "rate_pct": 9.7
+            },
+            {
+                "from": "CONVITE_AVALIACAO",
+                "to": "INTENCAO_AGENDAR",
+                "rate_pct": 19.4
+            },
+            {
+                "from": "CONVITE_AVALIACAO",
+                "to": "COLETA_DADOS",
+                "rate_pct": 45.2
+            },
+            {
+                "from": "CONVITE_AVALIACAO",
+                "to": "EBOOK_OFERTA",
+                "rate_pct": 29
+            },
+            {
+                "from": "CONVITE_AVALIACAO",
+                "to": "EBOOK_ACEITE",
+                "rate_pct": 3.2
+            },
+            {
+                "from": "CONVITE_AVALIACAO",
+                "to": "HANDOFF_AGENDAMENTO",
+                "rate_pct": 25.8
+            },
+            {
+                "from": "CONVITE_AVALIACAO",
+                "to": "HANDOFF_EBOOK",
+                "rate_pct": 22.6
+            },
+            {
+                "from": "PERGUNTA_INVESTIMENTO",
+                "to": "INVESTIMENTO_CONSULTA",
+                "rate_pct": 78.9
+            },
+            {
+                "from": "PERGUNTA_INVESTIMENTO",
+                "to": "RESPOSTA_GB_SEM_QUEIXA",
+                "rate_pct": 5.3
+            },
+            {
+                "from": "PERGUNTA_INVESTIMENTO",
+                "to": "INVESTIMENTO_GB_INFORMADO",
+                "rate_pct": 10.5
+            },
+            {
+                "from": "PERGUNTA_INVESTIMENTO",
+                "to": "INVESTIMENTO_FIOS",
+                "rate_pct": 15.8
+            },
+            {
+                "from": "PERGUNTA_INVESTIMENTO",
+                "to": "OBJECAO_PRECO",
+                "rate_pct": 10.5
+            },
+            {
+                "from": "PERGUNTA_INVESTIMENTO",
+                "to": "CONTORNO_OBJECAO",
+                "rate_pct": 5.3
+            },
+            {
+                "from": "PERGUNTA_INVESTIMENTO",
+                "to": "RESPOSTA_CONVENIO",
+                "rate_pct": 15.8
+            },
+            {
+                "from": "PERGUNTA_INVESTIMENTO",
+                "to": "QUALIFICACAO_CIDADE",
+                "rate_pct": 5.3
+            },
+            {
+                "from": "PERGUNTA_INVESTIMENTO",
+                "to": "CONSULTA_ONLINE",
+                "rate_pct": 10.5
+            },
+            {
+                "from": "PERGUNTA_INVESTIMENTO",
+                "to": "INTENCAO_AGENDAR",
+                "rate_pct": 10.5
+            },
+            {
+                "from": "PERGUNTA_INVESTIMENTO",
+                "to": "COLETA_DADOS",
+                "rate_pct": 42.1
+            },
+            {
+                "from": "PERGUNTA_INVESTIMENTO",
+                "to": "EBOOK_OFERTA",
+                "rate_pct": 31.6
+            },
+            {
+                "from": "PERGUNTA_INVESTIMENTO",
+                "to": "HANDOFF_AGENDAMENTO",
+                "rate_pct": 21.1
+            },
+            {
+                "from": "PERGUNTA_INVESTIMENTO",
+                "to": "HANDOFF_EBOOK",
+                "rate_pct": 21.1
+            },
+            {
+                "from": "INVESTIMENTO_CONSULTA",
+                "to": "RESPOSTA_GB_SEM_QUEIXA",
+                "rate_pct": 6.7
+            },
+            {
+                "from": "INVESTIMENTO_CONSULTA",
+                "to": "INVESTIMENTO_GB_INFORMADO",
+                "rate_pct": 6.7
+            },
+            {
+                "from": "INVESTIMENTO_CONSULTA",
+                "to": "INVESTIMENTO_FIOS",
+                "rate_pct": 6.7
+            },
+            {
+                "from": "INVESTIMENTO_CONSULTA",
+                "to": "OBJECAO_PRECO",
+                "rate_pct": 6.7
+            },
+            {
+                "from": "INVESTIMENTO_CONSULTA",
+                "to": "CONTORNO_OBJECAO",
+                "rate_pct": 6.7
+            },
+            {
+                "from": "INVESTIMENTO_CONSULTA",
+                "to": "RESPOSTA_CONVENIO",
+                "rate_pct": 13.3
+            },
+            {
+                "from": "INVESTIMENTO_CONSULTA",
+                "to": "QUALIFICACAO_CIDADE",
+                "rate_pct": 6.7
+            },
+            {
+                "from": "INVESTIMENTO_CONSULTA",
+                "to": "CONSULTA_ONLINE",
+                "rate_pct": 13.3
+            },
+            {
+                "from": "INVESTIMENTO_CONSULTA",
+                "to": "INTENCAO_AGENDAR",
+                "rate_pct": 13.3
+            },
+            {
+                "from": "INVESTIMENTO_CONSULTA",
+                "to": "COLETA_DADOS",
+                "rate_pct": 53.3
+            },
+            {
+                "from": "INVESTIMENTO_CONSULTA",
+                "to": "EBOOK_OFERTA",
+                "rate_pct": 40
+            },
+            {
+                "from": "INVESTIMENTO_CONSULTA",
+                "to": "HANDOFF_AGENDAMENTO",
+                "rate_pct": 26.7
+            },
+            {
+                "from": "INVESTIMENTO_CONSULTA",
+                "to": "HANDOFF_EBOOK",
+                "rate_pct": 26.7
+            },
+            {
+                "from": "INVESTIMENTO_GB_INFORMADO",
+                "to": "CONTORNO_OBJECAO",
+                "rate_pct": 50
+            },
+            {
+                "from": "INVESTIMENTO_GB_INFORMADO",
+                "to": "QUALIFICACAO_CIDADE",
+                "rate_pct": 50
+            },
+            {
+                "from": "INVESTIMENTO_GB_INFORMADO",
+                "to": "CONSULTA_ONLINE",
+                "rate_pct": 50
+            },
+            {
+                "from": "INVESTIMENTO_GB_INFORMADO",
+                "to": "EBOOK_OFERTA",
+                "rate_pct": 50
+            },
+            {
+                "from": "INVESTIMENTO_FIOS",
+                "to": "COLETA_DADOS",
+                "rate_pct": 50
+            },
+            {
+                "from": "INVESTIMENTO_FIOS",
+                "to": "EBOOK_OFERTA",
+                "rate_pct": 50
+            },
+            {
+                "from": "INVESTIMENTO_FIOS",
+                "to": "HANDOFF_AGENDAMENTO",
+                "rate_pct": 16.7
+            },
+            {
+                "from": "INVESTIMENTO_FIOS",
+                "to": "HANDOFF_EBOOK",
+                "rate_pct": 33.3
+            },
+            {
+                "from": "OBJECAO_PRECO",
+                "to": "RESPOSTA_CONVENIO",
+                "rate_pct": 20
+            },
+            {
+                "from": "OBJECAO_PRECO",
+                "to": "INTENCAO_AGENDAR",
+                "rate_pct": 20
+            },
+            {
+                "from": "OBJECAO_PRECO",
+                "to": "COLETA_DADOS",
+                "rate_pct": 100
+            },
+            {
+                "from": "OBJECAO_PRECO",
+                "to": "EBOOK_OFERTA",
+                "rate_pct": 40
+            },
+            {
+                "from": "OBJECAO_PRECO",
+                "to": "HANDOFF_AGENDAMENTO",
+                "rate_pct": 60
+            },
+            {
+                "from": "OBJECAO_PRECO",
+                "to": "HANDOFF_EBOOK",
+                "rate_pct": 40
+            },
+            {
+                "from": "RESPOSTA_CONVENIO",
+                "to": "COLETA_DADOS",
+                "rate_pct": 33.3
+            },
+            {
+                "from": "RESPOSTA_CONVENIO",
+                "to": "EBOOK_OFERTA",
+                "rate_pct": 33.3
+            },
+            {
+                "from": "RESPOSTA_CONVENIO",
+                "to": "HANDOFF_EBOOK",
+                "rate_pct": 33.3
+            },
+            {
+                "from": "PERGUNTA_LOCALIZACAO",
+                "to": "RESPOSTA_LOCALIZACAO",
+                "rate_pct": 100
+            },
+            {
+                "from": "PERGUNTA_LOCALIZACAO",
+                "to": "QUALIFICACAO_CIDADE",
+                "rate_pct": 100
+            },
+            {
+                "from": "PERGUNTA_LOCALIZACAO",
+                "to": "EBOOK_OFERTA",
+                "rate_pct": 100
+            },
+            {
+                "from": "RESPOSTA_LOCALIZACAO",
+                "to": "QUALIFICACAO_CIDADE",
+                "rate_pct": 50
+            },
+            {
+                "from": "RESPOSTA_LOCALIZACAO",
+                "to": "COLETA_DADOS",
+                "rate_pct": 50
+            },
+            {
+                "from": "RESPOSTA_LOCALIZACAO",
+                "to": "EBOOK_OFERTA",
+                "rate_pct": 50
+            },
+            {
+                "from": "RESPOSTA_LOCALIZACAO",
+                "to": "HANDOFF_AGENDAMENTO",
+                "rate_pct": 50
+            },
+            {
+                "from": "QUALIFICACAO_CIDADE",
+                "to": "CONSULTA_ONLINE",
+                "rate_pct": 20
+            },
+            {
+                "from": "QUALIFICACAO_CIDADE",
+                "to": "INTENCAO_AGENDAR",
+                "rate_pct": 40
+            },
+            {
+                "from": "QUALIFICACAO_CIDADE",
+                "to": "COLETA_DADOS",
+                "rate_pct": 40
+            },
+            {
+                "from": "QUALIFICACAO_CIDADE",
+                "to": "EBOOK_OFERTA",
+                "rate_pct": 40
+            },
+            {
+                "from": "QUALIFICACAO_CIDADE",
+                "to": "EBOOK_ACEITE",
+                "rate_pct": 20
+            },
+            {
+                "from": "QUALIFICACAO_CIDADE",
+                "to": "HANDOFF_AGENDAMENTO",
+                "rate_pct": 40
+            },
+            {
+                "from": "QUALIFICACAO_CIDADE",
+                "to": "HANDOFF_EBOOK",
+                "rate_pct": 20
+            },
+            {
+                "from": "CONSULTA_ONLINE",
+                "to": "INTENCAO_AGENDAR",
+                "rate_pct": 33.3
+            },
+            {
+                "from": "CONSULTA_ONLINE",
+                "to": "COLETA_DADOS",
+                "rate_pct": 33.3
+            },
+            {
+                "from": "CONSULTA_ONLINE",
+                "to": "HANDOFF_AGENDAMENTO",
+                "rate_pct": 33.3
+            },
+            {
+                "from": "CONSULTA_ONLINE",
+                "to": "HANDOFF_EBOOK",
+                "rate_pct": 33.3
+            },
+            {
+                "from": "INTENCAO_AGENDAR",
+                "to": "COLETA_DADOS",
+                "rate_pct": 55.6
+            },
+            {
+                "from": "INTENCAO_AGENDAR",
+                "to": "EBOOK_OFERTA",
+                "rate_pct": 11.1
+            },
+            {
+                "from": "INTENCAO_AGENDAR",
+                "to": "EBOOK_ACEITE",
+                "rate_pct": 11.1
+            },
+            {
+                "from": "INTENCAO_AGENDAR",
+                "to": "HANDOFF_AGENDAMENTO",
+                "rate_pct": 55.6
+            },
+            {
+                "from": "INTENCAO_AGENDAR",
+                "to": "HANDOFF_EBOOK",
+                "rate_pct": 11.1
+            },
+            {
+                "from": "COLETA_DADOS",
+                "to": "HANDOFF_AGENDAMENTO",
+                "rate_pct": 35
+            },
+            {
+                "from": "COLETA_DADOS",
+                "to": "HANDOFF_EBOOK",
+                "rate_pct": 35
+            },
+            {
+                "from": "EBOOK_OFERTA",
+                "to": "EBOOK_ACEITE",
+                "rate_pct": 9.1
+            },
+            {
+                "from": "EBOOK_OFERTA",
+                "to": "HANDOFF_EBOOK",
+                "rate_pct": 63.6
+            },
+            {
+                "from": "EBOOK_ACEITE",
+                "to": "HANDOFF_EBOOK",
+                "rate_pct": 100
+            }
+        ],
+        "top_sequences": [
+            {
+                "sequence": "COLETA_DADOS",
+                "count": 4
+            },
+            {
+                "sequence": "SAUDACAO",
+                "count": 4
+            },
+            {
+                "sequence": "SAUDACAO>COLETA_DADOS",
+                "count": 2
+            },
+            {
+                "sequence": "NONE",
+                "count": 2
+            },
+            {
+                "sequence": "PERGUNTA_INVESTIMENTO>SAUDACAO>QUEIXA_PACIENTE>APROFUNDAMENTO>PONTE_TRATAMENTO>EXPLICACAO_GB>CONVITE_AVALIACAO",
+                "count": 1
+            },
+            {
+                "sequence": "EXPLICACAO_GB>QUEIXA_PACIENTE>VALIDACAO_QUEIXA>APROFUNDAMENTO>OBJECAO_PRECO>PONTE_TRATAMENTO>CONVITE_AVALIACAO>INTENCAO_AGENDAR>COLETA_DADOS>HANDOFF_AGENDAMENTO",
+                "count": 1
+            },
+            {
+                "sequence": "EXPLICACAO_GB",
+                "count": 1
+            },
+            {
+                "sequence": "EXPLICACAO_GB>CONVITE_AVALIACAO>INTENCAO_AGENDAR",
+                "count": 1
+            },
+            {
+                "sequence": "HANDOFF_AGENDAMENTO",
+                "count": 1
+            },
+            {
+                "sequence": "SAUDACAO>QUEIXA_PACIENTE>OBJECAO_PRECO>PONTE_TRATAMENTO>EXPLICACAO_GB>CONVITE_AVALIACAO>COLETA_DADOS>HANDOFF_AGENDAMENTO",
+                "count": 1
+            },
+            {
+                "sequence": "CONVITE_AVALIACAO>PERGUNTA_INVESTIMENTO>INVESTIMENTO_CONSULTA>RESPOSTA_CONVENIO>EXPLICACAO_GB>RESPOSTA_GB_SEM_QUEIXA>QUEIXA_PACIENTE",
+                "count": 1
+            },
+            {
+                "sequence": "VALIDACAO_QUEIXA>CONVITE_AVALIACAO>PERGUNTA_INVESTIMENTO>INVESTIMENTO_CONSULTA>QUEIXA_PACIENTE>OBJECAO_PRECO>PONTE_TRATAMENTO>EBOOK_OFERTA>COLETA_DADOS>HANDOFF_EBOOK",
+                "count": 1
+            },
+            {
+                "sequence": "QUEIXA_PACIENTE>SAUDACAO>VALIDACAO_QUEIXA>APROFUNDAMENTO>PONTE_TRATAMENTO>EXPLICACAO_GB>CONVITE_AVALIACAO",
+                "count": 1
+            },
+            {
+                "sequence": "QUEIXA_PACIENTE>VALIDACAO_QUEIXA>APROFUNDAMENTO>PONTE_TRATAMENTO>INTENCAO_AGENDAR>EXPLICACAO_GB>CONVITE_AVALIACAO>COLETA_DADOS>HANDOFF_AGENDAMENTO",
+                "count": 1
+            },
+            {
+                "sequence": "QUEIXA_PACIENTE>CONVITE_AVALIACAO>PERGUNTA_INVESTIMENTO>INVESTIMENTO_CONSULTA>INTENCAO_AGENDAR",
+                "count": 1
+            }
+        ],
+        "anomalies": {
+            "out_of_order_count": 30
+        },
+        "final_stages_detected": [
+            {
+                "stage_code": "HANDOFF_AGENDAMENTO",
+                "stage_label": "HANDOFF_AGENDAMENTO",
+                "stage_index": 24,
+                "reason": "explicit_is_final_stage",
+                "score": 100,
+                "converted_count": 9
+            },
+            {
+                "stage_code": "HANDOFF_EBOOK",
+                "stage_label": "HANDOFF_EBOOK",
+                "stage_index": 25,
+                "reason": "explicit_is_final_stage",
+                "score": 100,
+                "converted_count": 7
+            }
+        ],
+        "final_stage_conversion_by_track": [
+            {
+                "stage_code": "HANDOFF_AGENDAMENTO",
+                "stage_label": "HANDOFF_AGENDAMENTO",
+                "stage_index": 24,
+                "tracks": {
+                    "pure_ia": {
+                        "total_conversations": 44,
+                        "converted_conversations": 7,
+                        "conversion_pct": 15.9
+                    },
+                    "pure_human": {
+                        "total_conversations": 0,
+                        "converted_conversations": 0,
+                        "conversion_pct": 0
+                    },
+                    "hybrid": {
+                        "total_conversations": 10,
+                        "converted_conversations": 2,
+                        "conversion_pct": 20
+                    }
+                }
+            },
+            {
+                "stage_code": "HANDOFF_EBOOK",
+                "stage_label": "HANDOFF_EBOOK",
+                "stage_index": 25,
+                "tracks": {
+                    "pure_ia": {
+                        "total_conversations": 44,
+                        "converted_conversations": 3,
+                        "conversion_pct": 6.8
+                    },
+                    "pure_human": {
+                        "total_conversations": 0,
+                        "converted_conversations": 0,
+                        "conversion_pct": 0
+                    },
+                    "hybrid": {
+                        "total_conversations": 10,
+                        "converted_conversations": 4,
+                        "conversion_pct": 40
+                    }
+                }
+            }
+        ],
+        "daily_track_volume": [
+            {
+                "date": "2026-04-13",
+                "pure_ia": 5,
+                "pure_human": 0,
+                "hybrid": 4
+            },
+            {
+                "date": "2026-04-14",
+                "pure_ia": 7,
+                "pure_human": 0,
+                "hybrid": 1
+            },
+            {
+                "date": "2026-04-15",
+                "pure_ia": 7,
+                "pure_human": 0,
+                "hybrid": 1
+            },
+            {
+                "date": "2026-04-16",
+                "pure_ia": 7,
+                "pure_human": 0,
+                "hybrid": 0
+            },
+            {
+                "date": "2026-04-17",
+                "pure_ia": 15,
+                "pure_human": 0,
+                "hybrid": 4
+            },
+            {
+                "date": "2026-04-18",
+                "pure_ia": 7,
+                "pure_human": 0,
+                "hybrid": 0
+            }
+        ]
+    },
+    "stage_config": {
+        "stages": [
+            {
+                "code": "SAUDACAO",
+                "keywords": [
+                    "como posso te ajudar",
+                    "oi! como posso",
+                    "oi, tudo bem"
+                ],
+                "indicates_professional": false
+            },
+            {
+                "code": "QUEIXA_PACIENTE",
+                "keywords": [
+                    "flacidez",
+                    "manchas",
+                    "melasma",
+                    "olheiras",
+                    "papada",
+                    "bigode chinês",
+                    "acne",
+                    "poros",
+                    "textura",
+                    "cicatriz",
+                    "linhas",
+                    "rugas",
+                    "contorno",
+                    "lábios"
+                ],
+                "indicates_professional": false
+            },
+            {
+                "code": "VALIDACAO_QUEIXA",
+                "keywords": [
+                    "costuma incomodar",
+                    "queixa bem comum",
+                    "muita gente começa a perceber",
+                    "isso incomoda bastante",
+                    "entendo. essa região",
+                    "é muito comum perceber"
+                ],
+                "indicates_professional": true
+            },
+            {
+                "code": "APROFUNDAMENTO",
+                "keywords": [
+                    "já chegou a fazer algum tratamento",
+                    "te incomoda mais em fotos",
+                    "percebe mais quando sorri",
+                    "aconteceu aos poucos",
+                    "começou há quanto tempo",
+                    "você já tentou"
+                ],
+                "indicates_professional": true
+            },
+            {
+                "code": "PONTE_TRATAMENTO",
+                "keywords": [
+                    "estímulo de colágeno",
+                    "combinar tecnologias",
+                    "tecnologias e injetáveis",
+                    "estratégia de estímulo",
+                    "qualidade da pele",
+                    "normalmente eu trabalho",
+                    "costumo combinar"
+                ],
+                "indicates_professional": true
+            },
+            {
+                "code": "EXPLICACAO_GB",
+                "keywords": [
+                    "Genuine Beauty",
+                    "plano personalizado do Genuine",
+                    "defino o plano",
+                    "metodologia criada por mim"
+                ],
+                "indicates_professional": true
+            },
+            {
+                "code": "CONVITE_AVALIACAO",
+                "keywords": [
+                    "consulta para avaliação",
+                    "examino seu rosto",
+                    "o ideal é a consulta",
+                    "defino o melhor plano"
+                ],
+                "indicates_professional": true
+            },
+            {
+                "code": "PERGUNTA_INVESTIMENTO",
+                "keywords": [
+                    "quanto custa",
+                    "qual o valor",
+                    "quanto é",
+                    "investimento",
+                    "quanto fica"
+                ],
+                "indicates_professional": false
+            },
+            {
+                "code": "INVESTIMENTO_CONSULTA",
+                "keywords": [
+                    "700 reais",
+                    "investimento da consulta para avaliação é"
+                ],
+                "indicates_professional": true
+            },
+            {
+                "code": "RESPOSTA_GB_SEM_QUEIXA",
+                "keywords": [
+                    "é personalizado e varia",
+                    "varia conforme o plano que eu indicar",
+                    "me conta o que você gostaria de tratar"
+                ],
+                "indicates_professional": true
+            },
+            {
+                "code": "INVESTIMENTO_GB_INFORMADO",
+                "keywords": [
+                    "a partir de R$ 7.000",
+                    "investimento inicial do Genuine Beauty"
+                ],
+                "indicates_professional": true
+            },
+            {
+                "code": "INVESTIMENTO_FIOS",
+                "keywords": [
+                    "Fios Aptos a partir de R$ 4.490",
+                    "a partir de R$ 4.490",
+                    "4.490"
+                ],
+                "indicates_professional": true
+            },
+            {
+                "code": "OBJECAO_PRECO",
+                "keywords": [
+                    "caro",
+                    "muito alto",
+                    "não tenho esse valor",
+                    "sai do orçamento",
+                    "é muito",
+                    "pesado"
+                ],
+                "indicates_professional": false
+            },
+            {
+                "code": "CONTORNO_OBJECAO",
+                "keywords": [
+                    "investimento da consulta é revertido",
+                    "revertido no pagamento",
+                    "resultado natural e genuíno",
+                    "explico com clareza"
+                ],
+                "indicates_professional": true
+            },
+            {
+                "code": "PERGUNTA_CONVENIO",
+                "keywords": [
+                    "convênio",
+                    "plano de saúde",
+                    "atende por plano",
+                    "aceita convênio"
+                ],
+                "indicates_professional": false
+            },
+            {
+                "code": "RESPOSTA_CONVENIO",
+                "keywords": [
+                    "somente particular",
+                    "atendimento é somente particular"
+                ],
+                "indicates_professional": true
+            },
+            {
+                "code": "PERGUNTA_LOCALIZACAO",
+                "keywords": [
+                    "onde atende",
+                    "qual o endereço",
+                    "onde fica",
+                    "como chegar"
+                ],
+                "indicates_professional": false
+            },
+            {
+                "code": "RESPOSTA_LOCALIZACAO",
+                "keywords": [
+                    "clínica Unità",
+                    "Ed. Diamond Center",
+                    "Diamond Center"
+                ],
+                "indicates_professional": true
+            },
+            {
+                "code": "QUALIFICACAO_CIDADE",
+                "keywords": [
+                    "você fala de qual cidade",
+                    "você é de qual cidade"
+                ],
+                "indicates_professional": true
+            },
+            {
+                "code": "CONSULTA_ONLINE",
+                "keywords": [
+                    "atendo muita gente de fora",
+                    "consulta para avaliação online",
+                    "dá pra fazer a consulta online"
+                ],
+                "indicates_professional": true
+            },
+            {
+                "code": "INTENCAO_AGENDAR",
+                "keywords": [
+                    "quero agendar",
+                    "quero marcar",
+                    "como agendar",
+                    "quero ir",
+                    "pode ser",
+                    "quero fazer"
+                ],
+                "indicates_professional": false
+            },
+            {
+                "code": "COLETA_DADOS",
+                "keywords": [
+                    "me passa seu nome",
+                    "WhatsApp com DDD",
+                    "seu nome e WhatsApp"
+                ],
+                "indicates_professional": true
+            },
+            {
+                "code": "EBOOK_OFERTA",
+                "keywords": [
+                    "guia de skincare",
+                    "quer que eu te envie",
+                    "te enviar meu guia",
+                    "meu guia de skincare"
+                ],
+                "indicates_professional": true
+            },
+            {
+                "code": "EBOOK_ACEITE",
+                "keywords": [
+                    "quero o guia",
+                    "pode enviar",
+                    "quero sim",
+                    "manda sim"
+                ],
+                "indicates_professional": false
+            },
+            {
+                "code": "HANDOFF_AGENDAMENTO",
+                "keywords": [
+                    "pedir pra Larissa te chamar",
+                    "Larissa te chamar e combinar"
+                ],
+                "is_final_stage": true,
+                "indicates_professional": true
+            },
+            {
+                "code": "HANDOFF_EBOOK",
+                "keywords": [
+                    "pedir pra Larissa te enviar",
+                    "Larissa te enviar o guia"
+                ],
+                "is_final_stage": true,
+                "indicates_professional": true
+            },
+            {
+                "code": "PACIENTE_RECORRENTE",
+                "keywords": [
+                    "quero voltar",
+                    "quero retornar",
+                    "já fui sua paciente",
+                    "quero manutenção",
+                    "fiz procedimento com você",
+                    "quero refazer"
+                ],
+                "indicates_professional": false
+            }
+        ]
+    },
+    "report_md": "## Visão Geral\nO funil de atendimento da clínica de estética apresentou um total de 54 interações, sendo 44 delas conduzidas por inteligência artificial (IA) e 10 de forma híbrida. A taxa de engajamento foi alta, com 95,5% para IA pura e 100% para híbrido.\n\n## Trilhas de Atendimento (IA pura / Humano puro / Híbrida)\n- **IA Pura**: 44 interações, 42 com estágio final, 95,5% de engajamento.\n- **Humano Puro**: 0 interações, 0 com estágio final, 0% de engajamento.\n- **Híbrida**: 10 interações, 10 com estágio final, 100% de engajamento.\n\n## Análise do Funil (stage reach and biggest drop-offs)\n- **SAUDACAO**: 16 (29,6%)\n- **QUEIXA_PACIENTE**: 33 (61,1%)\n- **VALIDACAO_QUEIXA**: 18 (33,3%)\n- **APROFUNDAMENTO**: 13 (24,1%)\n- **PONTE_TRATAMENTO**: 18 (33,3%)\n- **EXPLICACAO_GB**: 25 (46,3%)\n- **CONVITE_AVALIACAO**: 31 (57,4%)\n- **PERGUNTA_INVESTIMENTO**: 19 (35,2%)\n- **INVESTIMENTO_CONSULTA**: 15 (27,8%)\n- **RESPOSTA_GB_SEM_QUEIXA**: 2 (3,7%)\n\nOs maiores drop-offs ocorreram entre os estágios:\n- **SAUDACAO** para **VALIDACAO_QUEIXA**: 16 para 18 (queda de 45,5%).\n- **VALIDACAO_QUEIXA** para **APROFUNDAMENTO**: 18 para 13 (queda de 27,8%).\n\n## Principais Anomalias\nForam detectadas 30 interações fora de ordem no funil, o que pode indicar problemas na sequência de atendimento.\n\n## Maior Oportunidade de Conversão\nA maior oportunidade de conversão está no estágio **QUEIXA_PACIENTE** para **CONVITE_AVALIACAO**, com uma taxa de conversão de 72,7%. Aumentar a eficácia neste ponto pode resultar em um maior número de agendamentos e conversões.",
+    "run_id": "45d84703-4176-417f-b128-0801911fdc18"
+}

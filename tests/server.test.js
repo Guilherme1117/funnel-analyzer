@@ -188,6 +188,9 @@ describe('POST /analyze', () => {
     expect(res.body).toHaveProperty('funnel');
     expect(res.body).toHaveProperty('stage_config');
     expect(res.body.stage_config).toEqual(VALID_STAGE_CONFIG);
+    expect(res.body.funnel).toHaveProperty('final_stages_detected');
+    expect(res.body.funnel).toHaveProperty('final_stage_conversion_by_track');
+    expect(res.body.funnel).toHaveProperty('daily_track_volume');
     expect(res.body).toHaveProperty('run_id', RUN_ID);
   });
 

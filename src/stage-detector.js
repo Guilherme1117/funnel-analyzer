@@ -72,10 +72,17 @@ function detectStages(messages, stageConfig) {
 function classifyConversations(chatMap, stageConfig) {
   return Object.entries(chatMap).map(([chatId, messages]) => {
     const result = detectStages(messages, stageConfig);
+    const activeDates = Array.from(new Set(
+      messages
+        .map(m => typeof m.created_at === 'string' ? m.created_at.substring(0, 10) : null)
+        .filter(Boolean)
+    )).sort();
+
     return {
       chatId,
       msgCount: messages.length,
       inboundCount: messages.filter(m => m.direction === 'inbound').length,
+      activeDates,
       ...result
     };
   });

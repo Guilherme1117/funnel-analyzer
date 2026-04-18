@@ -142,7 +142,7 @@ app.post('/analyze', async (req, res) => {
     }
 
     const classified = classifyConversations(professionalChatMap, stageConfig);
-    const metrics = computeMetrics(classified);
+    const metrics = computeMetrics(classified, stageConfig);
     const report_md = await generateReport(metrics, account_id);
 
     const meta = {

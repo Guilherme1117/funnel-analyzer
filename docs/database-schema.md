@@ -77,17 +77,23 @@ Armazena a configuração do funil por conta. Relação **1:1** com `account_id`
       "id": "stage_1",
       "name": "Primeiro Contato",
       "description": "Mensagem inicial do paciente",
-      "keywords": ["oi", "olá", "bom dia"]
+      "keywords": ["oi", "olá", "bom dia"],
+      "indicates_professional": false,
+      "is_final_stage": false
     },
     {
       "id": "stage_2",
       "name": "Qualificação",
       "description": "Coleta de informações do paciente",
-      "keywords": ["consulta", "agendamento", "preço"]
+      "keywords": ["consulta", "agendamento", "preço"],
+      "indicates_professional": true,
+      "is_final_stage": true
     }
   ]
 }
 ```
+
+> `is_final_stage` é o campo preferencial para marcar quais etapas representam conversão final. Se configs antigos não tiverem esse campo, a API ainda consegue usar fallback heurístico durante a análise.
 
 ---
 
@@ -111,7 +117,7 @@ Representa uma execução completa de análise. Um registro por execução.
 | top_sequences | jsonb | Sequências de estágios mais frequentes |
 | anomalies | jsonb | Anomalias detectadas na análise |
 | report_md | text | Relatório completo em formato Markdown |
-| custom_data | jsonb | Dados adicionais personalizados |
+| custom_data | jsonb | Dados adicionais personalizados, incluindo `final_stages_detected`, `final_stage_conversion_by_track` e `daily_track_volume` |
 | analyzed_at | timestamptz | Data/hora da execução da análise |
 
 **Índices:**

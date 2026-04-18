@@ -8,9 +8,14 @@ REST API local para análise de funil de vendas de chatbots de IA (WhatsApp/Inst
 
 O sistema opera em **duas etapas desacopladas**:
 
-1. **`POST /funnel/build`** — Envia o prompt do seu assistente de IA com o `account_id` do cliente. O `gpt-4o-mini` lê o prompt e extrai automaticamente as etapas do funil (`stageConfig`), que é **salvo no Supabase** e **cacheado por hash** — prompt igual = zero custo de OpenAI.
+1. **`POST /funnel/build`** — Envia o prompt do seu assistente de IA com o `account_id` do cliente. O `gpt-4o-mini` lê o prompt e extrai automaticamente as etapas do funil (`stageConfig`), incluindo `indicates_professional` e `is_final_stage`, que é **salvo no Supabase** e **cacheado por hash** — prompt igual = zero custo de OpenAI.
 
-2. **`POST /analyze`** — Envia `account_id` (obrigatório), `config_id` (opcional), e filtros de data opcionais (`start_date`, `end_date`). O backend busca o `stageConfig` salvo no banco (ou usa o `config_id` indicado), classifica cada conversa **localmente via regex** (sem LLM), gera relatório e **persiste tudo automaticamente**.
+2. **`POST /analyze`** — Envia `account_id` (obrigatório), `config_id` (opcional), e filtros de data opcionais (`start_date`, `end_date`). O backend busca o `stageConfig` salvo no banco (ou usa o `config_id` indicado), classifica cada conversa **localmente via regex** (sem LLM), gera relatório e **persiste tudo automaticamente**. A análise agora também retorna:
+   - `final_stages_detected`
+   - `final_stage_conversion_by_track`
+   - `daily_track_volume`
+
+> Quando o `stageConfig` traz `is_final_stage`, essa marcação explícita tem prioridade total. Configs antigos sem esse campo continuam funcionando com fallback heurístico.
 
 > **Fluxo recomendado:** chame `/funnel/build` uma vez por prompt (quando o assistente mudar) e use o `config_id` retornado nas chamadas de `/analyze`. O histórico completo fica disponível em `/runs/:account_id`.
 
@@ -63,7 +68,7 @@ npm test      # rodar testes
 ```
 POST /funnel/build {prompt, account_id?}
   ├── auth.js            → valida Bearer token (API_TOKEN)
-  ├── prompt-parser.js   → OpenAI gpt-4o-mini → stageConfig
+  ├── prompt-parser.js   → OpenAI gpt-4o-mini → stageConfig (+ is_final_stage)
   ├── cache.js           → MD5 hash (cache local de performance)
   └── repository.js      → salva funnel_configs no Supabase (se account_id)
 
@@ -71,11 +76,11 @@ POST /analyze {account_id, config_id?, start_date?, end_date?}
   ├── auth.js            → valida Bearer token (API_TOKEN)
   ├── supabase.js        → busca wa_chats + wa_messages (com filtro de data)
   ├── filter.js          → classifica: professional | personal
-  ├── stage-detector.js  → detecta etapas por regex dinâmica
-  ├── metrics.js         → reach%, conversion, tracks, anomalias
+  ├── stage-detector.js  → detecta etapas por regex dinâmica + dias ativos por conversa
+  ├── metrics.js         → reach%, conversion, tracks, anomalias, final stages, série diária
   ├── report-writer.js   → gpt-4o-mini → relatório markdown
   ├── errors.js          → erros tipados e formatação padronizada
-  └── repository.js      → persiste analysis_runs + conversations + events
+  └── repository.js      → persiste analysis_runs + conversations + events + custom_data
 
 GET  /configs/:id        → repository.getConfig()
 PUT  /configs/:id        → repository.saveConfig()
@@ -90,14 +95,14 @@ GET  /runs/:id/:run_id   → repository.getRunDetail()
 | `server.js` | Rotas Express, validação de entrada |
 | `auth.js` | Middleware de autenticação via Bearer token |
 | `errors.js` | Erros tipados e formatação padronizada de respostas de erro |
-| `prompt-parser.js` | Extrai `stages[]` do prompt via OpenAI Structured Outputs |
+| `prompt-parser.js` | Extrai `stages[]` do prompt via OpenAI Structured Outputs, incluindo `is_final_stage` |
 | `filter.js` | Classifica conversa como profissional ou pessoal |
 | `stage-detector.js` | Detecta quais etapas foram atingidas em cada conversa |
-| `metrics.js` | Agrega métricas de funil dinamicamente |
+| `metrics.js` | Agrega métricas de funil, conversão por stage final e volume diário por track |
 | `report-writer.js` | Gera relatório markdown com gpt-4o-mini |
 | `cache.js` | Cache local de `stageConfig` por hash MD5 (performance) |
 | `supabase.js` | Busca conversas/mensagens + helper `supabaseRequest` |
-| `repository.js` | Persistência de configs e runs no Supabase |
+| `repository.js` | Persistência de configs e runs no Supabase, incluindo `custom_data` analítico |
 
 ---
 

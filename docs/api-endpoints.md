@@ -71,17 +71,20 @@ curl -X POST http://localhost:3000/funnel/build \
       {
         "code": "SAUDACAO",
         "keywords": ["olá", "boa tarde", "bem-vindo"],
-        "indicates_professional": false
+        "indicates_professional": false,
+        "is_final_stage": false
       },
       {
         "code": "QUEIXA",
         "keywords": ["dor de dente", "problema", "consulta"],
-        "indicates_professional": true
+        "indicates_professional": true,
+        "is_final_stage": false
       },
       {
         "code": "INVESTIMENTO",
         "keywords": ["valor", "preço", "quanto custa"],
-        "indicates_professional": true
+        "indicates_professional": true,
+        "is_final_stage": true
       }
     ]
   },
@@ -93,6 +96,7 @@ curl -X POST http://localhost:3000/funnel/build \
 
 > `cacheHit: true` indica que o resultado veio do cache local (sem chamada à OpenAI).
 > `config_id` será `null` se `account_id` não foi fornecido ou se a persistência falhou.
+> `is_final_stage` é gerado no `stageConfig` para marcar explicitamente quais etapas contam como conversão final. Configs antigos sem esse campo continuam funcionando com fallback heurístico no `/analyze`.
 
 **Erros**
 
@@ -174,6 +178,40 @@ curl -X POST http://localhost:3000/analyze \
       { "from": "SAUDACAO", "to": "QUEIXA",       "rate_pct": 85.7 },
       { "from": "QUEIXA",   "to": "INVESTIMENTO", "rate_pct": 50.0 }
     ],
+    "final_stages_detected": [
+      {
+        "stage_code": "AGENDAMENTO",
+        "stage_label": "AGENDAMENTO",
+        "stage_index": 3,
+        "reason": "explicit_is_final_stage",
+        "score": 100,
+        "converted_count": 74
+      },
+      {
+        "stage_code": "CONFIRMACAO_AGENDAMENTO",
+        "stage_label": "CONFIRMACAO_AGENDAMENTO",
+        "stage_index": 4,
+        "reason": "explicit_is_final_stage",
+        "score": 100,
+        "converted_count": 51
+      }
+    ],
+    "final_stage_conversion_by_track": [
+      {
+        "stage_code": "AGENDAMENTO",
+        "stage_label": "AGENDAMENTO",
+        "stage_index": 3,
+        "tracks": {
+          "pure_ia":    { "total_conversations": 90, "converted_conversations": 30, "conversion_pct": 33.3 },
+          "pure_human": { "total_conversations": 30, "converted_conversations": 8,  "conversion_pct": 26.7 },
+          "hybrid":     { "total_conversations": 70, "converted_conversations": 36, "conversion_pct": 51.4 }
+        }
+      }
+    ],
+    "daily_track_volume": [
+      { "date": "2024-01-10", "pure_ia": 12, "pure_human": 4, "hybrid": 8 },
+      { "date": "2024-01-11", "pure_ia": 9,  "pure_human": 6, "hybrid": 10 }
+    ],
     "top_sequences": [
       { "sequence": "SAUDACAO>QUEIXA>INVESTIMENTO", "count": 85 },
       { "sequence": "SAUDACAO>QUEIXA",              "count": 60 },
@@ -183,9 +221,9 @@ curl -X POST http://localhost:3000/analyze \
   },
   "stage_config": {
     "stages": [
-      { "code": "SAUDACAO",    "keywords": ["olá", "boa tarde"],  "indicates_professional": false },
-      { "code": "QUEIXA",      "keywords": ["dor", "problema"],   "indicates_professional": true  },
-      { "code": "INVESTIMENTO","keywords": ["preço", "valor"],    "indicates_professional": true  }
+      { "code": "SAUDACAO",    "keywords": ["olá", "boa tarde"],  "indicates_professional": false, "is_final_stage": false },
+      { "code": "QUEIXA",      "keywords": ["dor", "problema"],   "indicates_professional": true,  "is_final_stage": false },
+      { "code": "INVESTIMENTO","keywords": ["preço", "valor"],    "indicates_professional": true,  "is_final_stage": true  }
     ]
   },
   "report_md": "# Relatório de Funil\n\n## Resumo\n...",
@@ -195,6 +233,8 @@ curl -X POST http://localhost:3000/analyze \
 
 > `meta.period` é `null` quando nenhum filtro de data foi aplicado.
 > O campo `warnings` pode aparecer na resposta quando a persistência do run falha, mas a análise foi concluída com sucesso.
+> `final_stages_detected` mostra quais etapas finais foram usadas na análise. Quando o `stage_config` contém `is_final_stage: true`, essa marcação explícita tem prioridade total. A inferência automática fica como fallback para configs legados.
+> `daily_track_volume` contabiliza chats com atividade por dia no intervalo filtrado, separados em `pure_ia`, `pure_human` e `hybrid`.
 
 **Erros**
 
@@ -236,9 +276,9 @@ curl http://localhost:3000/configs/a1b2c3d4-e5f6-7890-abcd-ef1234567890 \
   "prompt_hash": "d41d8cd98f00b204e9800998ecf8427e",
   "stage_config": {
     "stages": [
-      { "code": "SAUDACAO",    "keywords": ["olá", "boa tarde"], "indicates_professional": false },
-      { "code": "QUEIXA",      "keywords": ["dor", "problema"],  "indicates_professional": true  },
-      { "code": "INVESTIMENTO","keywords": ["preço", "valor"],   "indicates_professional": true  }
+      { "code": "SAUDACAO",    "keywords": ["olá", "boa tarde"], "indicates_professional": false, "is_final_stage": false },
+      { "code": "QUEIXA",      "keywords": ["dor", "problema"],  "indicates_professional": true,  "is_final_stage": false },
+      { "code": "INVESTIMENTO","keywords": ["preço", "valor"],   "indicates_professional": true,  "is_final_stage": true  }
     ]
   },
   "created_at": "2024-01-15T09:00:00.000Z",
@@ -269,9 +309,9 @@ curl -X PUT http://localhost:3000/configs/a1b2c3d4-e5f6-7890-abcd-ef1234567890 \
   -d '{
     "stage_config": {
       "stages": [
-        { "code": "SAUDACAO",    "keywords": ["olá", "oi"],   "indicates_professional": false },
-        { "code": "QUEIXA",      "keywords": ["problema"],    "indicates_professional": true  },
-        { "code": "AGENDAMENTO", "keywords": ["agendar", "horário"], "indicates_professional": true }
+        { "code": "SAUDACAO",    "keywords": ["olá", "oi"],   "indicates_professional": false, "is_final_stage": false },
+        { "code": "QUEIXA",      "keywords": ["problema"],    "indicates_professional": true,  "is_final_stage": false },
+        { "code": "AGENDAMENTO", "keywords": ["agendar", "horário"], "indicates_professional": true, "is_final_stage": true }
       ]
     },
     "prompt_hash": "manual"
@@ -288,7 +328,7 @@ curl -X PUT http://localhost:3000/configs/a1b2c3d4-e5f6-7890-abcd-ef1234567890 \
 
 | Campo         | Tipo   | Obrigatório | Descrição                                                                         |
 |---------------|--------|-------------|-----------------------------------------------------------------------------------|
-| `stage_config`| objeto | Sim         | Objeto contendo obrigatoriamente um array `stages` com a definição das etapas     |
+| `stage_config`| objeto | Sim         | Objeto contendo obrigatoriamente um array `stages`; cada stage pode informar `is_final_stage` para marcar conversão final |
 | `prompt_hash` | string | Não         | Hash do prompt de origem. Padrão: `"manual"` quando a configuração é feita à mão |
 
 **Resposta — 200 OK**
@@ -400,6 +440,33 @@ curl "http://localhost:3000/runs/a1b2c3d4-e5f6-7890-abcd-ef1234567890/c3d4e5f6-a
   "conversion": [
     { "from": "SAUDACAO", "to": "QUEIXA", "rate_pct": 85.7 }
   ],
+  "custom_data": {
+    "final_stages_detected": [
+      {
+        "stage_code": "AGENDAMENTO",
+        "stage_label": "AGENDAMENTO",
+        "stage_index": 3,
+        "reason": "explicit_is_final_stage",
+        "score": 100,
+        "converted_count": 74
+      }
+    ],
+    "final_stage_conversion_by_track": [
+      {
+        "stage_code": "AGENDAMENTO",
+        "stage_label": "AGENDAMENTO",
+        "stage_index": 3,
+        "tracks": {
+          "pure_ia":    { "total_conversations": 90, "converted_conversations": 30, "conversion_pct": 33.3 },
+          "pure_human": { "total_conversations": 30, "converted_conversations": 8,  "conversion_pct": 26.7 },
+          "hybrid":     { "total_conversations": 70, "converted_conversations": 36, "conversion_pct": 51.4 }
+        }
+      }
+    ],
+    "daily_track_volume": [
+      { "date": "2024-01-10", "pure_ia": 12, "pure_human": 4, "hybrid": 8 }
+    ]
+  },
   "top_sequences": [
     { "sequence": "SAUDACAO>QUEIXA>INVESTIMENTO", "count": 85 }
   ],

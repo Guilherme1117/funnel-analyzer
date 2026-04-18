@@ -1,0 +1,942 @@
+{
+    "meta": {
+        "account_id": "4ba6a619-594e-48f8-82e2-16a9df9bc438",
+        "analyzed_at": "2026-04-18T14:47:23.467Z",
+        "total_chats": 227,
+        "professional": 78,
+        "personal": 149,
+        "total_messages": 2095,
+        "period": {
+            "start": "2026-04-13T00:00:00Z",
+            "end": "2026-04-18T23:59:59Z"
+        }
+    },
+    "funnel": {
+        "overview": {
+            "total": 78
+        },
+        "tracks": {
+            "pure_ia": {
+                "count": 26,
+                "with_last_stage": 25,
+                "engagement_pct": 96.2
+            },
+            "pure_human": {
+                "count": 18,
+                "with_last_stage": 18,
+                "engagement_pct": 100
+            },
+            "hybrid": {
+                "count": 34,
+                "with_last_stage": 34,
+                "engagement_pct": 100
+            },
+            "no_outbound": {
+                "count": 0,
+                "with_last_stage": 0,
+                "engagement_pct": 0
+            }
+        },
+        "stages": [
+            {
+                "code": "SAUDACAO",
+                "reach": 31,
+                "reach_pct": 39.7,
+                "by_ia": 9,
+                "by_human": 1
+            },
+            {
+                "code": "QUEIXA_PACIENTE",
+                "reach": 77,
+                "reach_pct": 98.7,
+                "by_ia": 24,
+                "by_human": 43
+            },
+            {
+                "code": "VALIDACAO_QUEIXA",
+                "reach": 31,
+                "reach_pct": 39.7,
+                "by_ia": 26,
+                "by_human": 5
+            },
+            {
+                "code": "HISTORICO_TRATAMENTOS",
+                "reach": 33,
+                "reach_pct": 42.3,
+                "by_ia": 32,
+                "by_human": 1
+            },
+            {
+                "code": "EXPLICACAO_FASTLIFTING",
+                "reach": 51,
+                "reach_pct": 65.4,
+                "by_ia": 17,
+                "by_human": 32
+            },
+            {
+                "code": "EXPLICACAO_FULLFACE",
+                "reach": 27,
+                "reach_pct": 34.6,
+                "by_ia": 18,
+                "by_human": 9
+            },
+            {
+                "code": "DIFERENCIAIS_TECNICA",
+                "reach": 29,
+                "reach_pct": 37.2,
+                "by_ia": 21,
+                "by_human": 8
+            },
+            {
+                "code": "MEDO_RESULTADO",
+                "reach": 8,
+                "reach_pct": 10.3,
+                "by_ia": 8,
+                "by_human": 0
+            },
+            {
+                "code": "PERGUNTA_INVESTIMENTO",
+                "reach": 7,
+                "reach_pct": 9,
+                "by_ia": 0,
+                "by_human": 0
+            },
+            {
+                "code": "INVESTIMENTO_CONSULTA",
+                "reach": 4,
+                "reach_pct": 5.1,
+                "by_ia": 4,
+                "by_human": 0
+            },
+            {
+                "code": "INVESTIMENTO_CIRURGIA_INFORMADO",
+                "reach": 24,
+                "reach_pct": 30.8,
+                "by_ia": 24,
+                "by_human": 0
+            },
+            {
+                "code": "LOCALIZACAO",
+                "reach": 5,
+                "reach_pct": 6.4,
+                "by_ia": 0,
+                "by_human": 0
+            },
+            {
+                "code": "OFERTA_TELECONSULTA",
+                "reach": 10,
+                "reach_pct": 12.8,
+                "by_ia": 9,
+                "by_human": 1
+            },
+            {
+                "code": "HANDOFF",
+                "reach": 4,
+                "reach_pct": 5.1,
+                "by_ia": 4,
+                "by_human": 0
+            },
+            {
+                "code": "CONTATO_EQUIPE",
+                "reach": 2,
+                "reach_pct": 2.6,
+                "by_ia": 2,
+                "by_human": 0
+            }
+        ],
+        "conversion": [
+            {
+                "from": "SAUDACAO",
+                "to": "QUEIXA_PACIENTE",
+                "rate_pct": 51.6
+            },
+            {
+                "from": "SAUDACAO",
+                "to": "VALIDACAO_QUEIXA",
+                "rate_pct": 38.7
+            },
+            {
+                "from": "SAUDACAO",
+                "to": "HISTORICO_TRATAMENTOS",
+                "rate_pct": 45.2
+            },
+            {
+                "from": "SAUDACAO",
+                "to": "EXPLICACAO_FASTLIFTING",
+                "rate_pct": 22.6
+            },
+            {
+                "from": "SAUDACAO",
+                "to": "EXPLICACAO_FULLFACE",
+                "rate_pct": 38.7
+            },
+            {
+                "from": "SAUDACAO",
+                "to": "DIFERENCIAIS_TECNICA",
+                "rate_pct": 19.4
+            },
+            {
+                "from": "SAUDACAO",
+                "to": "MEDO_RESULTADO",
+                "rate_pct": 12.9
+            },
+            {
+                "from": "SAUDACAO",
+                "to": "PERGUNTA_INVESTIMENTO",
+                "rate_pct": 6.5
+            },
+            {
+                "from": "SAUDACAO",
+                "to": "INVESTIMENTO_CONSULTA",
+                "rate_pct": 3.2
+            },
+            {
+                "from": "SAUDACAO",
+                "to": "INVESTIMENTO_CIRURGIA_INFORMADO",
+                "rate_pct": 35.5
+            },
+            {
+                "from": "SAUDACAO",
+                "to": "LOCALIZACAO",
+                "rate_pct": 9.7
+            },
+            {
+                "from": "SAUDACAO",
+                "to": "OFERTA_TELECONSULTA",
+                "rate_pct": 12.9
+            },
+            {
+                "from": "SAUDACAO",
+                "to": "HANDOFF",
+                "rate_pct": 3.2
+            },
+            {
+                "from": "SAUDACAO",
+                "to": "CONTATO_EQUIPE",
+                "rate_pct": 6.5
+            },
+            {
+                "from": "QUEIXA_PACIENTE",
+                "to": "VALIDACAO_QUEIXA",
+                "rate_pct": 39
+            },
+            {
+                "from": "QUEIXA_PACIENTE",
+                "to": "HISTORICO_TRATAMENTOS",
+                "rate_pct": 41.6
+            },
+            {
+                "from": "QUEIXA_PACIENTE",
+                "to": "EXPLICACAO_FASTLIFTING",
+                "rate_pct": 64.9
+            },
+            {
+                "from": "QUEIXA_PACIENTE",
+                "to": "EXPLICACAO_FULLFACE",
+                "rate_pct": 35.1
+            },
+            {
+                "from": "QUEIXA_PACIENTE",
+                "to": "DIFERENCIAIS_TECNICA",
+                "rate_pct": 37.7
+            },
+            {
+                "from": "QUEIXA_PACIENTE",
+                "to": "MEDO_RESULTADO",
+                "rate_pct": 10.4
+            },
+            {
+                "from": "QUEIXA_PACIENTE",
+                "to": "PERGUNTA_INVESTIMENTO",
+                "rate_pct": 5.2
+            },
+            {
+                "from": "QUEIXA_PACIENTE",
+                "to": "INVESTIMENTO_CONSULTA",
+                "rate_pct": 5.2
+            },
+            {
+                "from": "QUEIXA_PACIENTE",
+                "to": "INVESTIMENTO_CIRURGIA_INFORMADO",
+                "rate_pct": 31.2
+            },
+            {
+                "from": "QUEIXA_PACIENTE",
+                "to": "LOCALIZACAO",
+                "rate_pct": 5.2
+            },
+            {
+                "from": "QUEIXA_PACIENTE",
+                "to": "OFERTA_TELECONSULTA",
+                "rate_pct": 10.4
+            },
+            {
+                "from": "QUEIXA_PACIENTE",
+                "to": "HANDOFF",
+                "rate_pct": 5.2
+            },
+            {
+                "from": "QUEIXA_PACIENTE",
+                "to": "CONTATO_EQUIPE",
+                "rate_pct": 1.3
+            },
+            {
+                "from": "VALIDACAO_QUEIXA",
+                "to": "HISTORICO_TRATAMENTOS",
+                "rate_pct": 29
+            },
+            {
+                "from": "VALIDACAO_QUEIXA",
+                "to": "EXPLICACAO_FASTLIFTING",
+                "rate_pct": 22.6
+            },
+            {
+                "from": "VALIDACAO_QUEIXA",
+                "to": "EXPLICACAO_FULLFACE",
+                "rate_pct": 19.4
+            },
+            {
+                "from": "VALIDACAO_QUEIXA",
+                "to": "DIFERENCIAIS_TECNICA",
+                "rate_pct": 25.8
+            },
+            {
+                "from": "VALIDACAO_QUEIXA",
+                "to": "MEDO_RESULTADO",
+                "rate_pct": 22.6
+            },
+            {
+                "from": "VALIDACAO_QUEIXA",
+                "to": "PERGUNTA_INVESTIMENTO",
+                "rate_pct": 3.2
+            },
+            {
+                "from": "VALIDACAO_QUEIXA",
+                "to": "INVESTIMENTO_CONSULTA",
+                "rate_pct": 9.7
+            },
+            {
+                "from": "VALIDACAO_QUEIXA",
+                "to": "INVESTIMENTO_CIRURGIA_INFORMADO",
+                "rate_pct": 51.6
+            },
+            {
+                "from": "VALIDACAO_QUEIXA",
+                "to": "LOCALIZACAO",
+                "rate_pct": 6.5
+            },
+            {
+                "from": "VALIDACAO_QUEIXA",
+                "to": "OFERTA_TELECONSULTA",
+                "rate_pct": 12.9
+            },
+            {
+                "from": "VALIDACAO_QUEIXA",
+                "to": "HANDOFF",
+                "rate_pct": 12.9
+            },
+            {
+                "from": "HISTORICO_TRATAMENTOS",
+                "to": "EXPLICACAO_FASTLIFTING",
+                "rate_pct": 21.2
+            },
+            {
+                "from": "HISTORICO_TRATAMENTOS",
+                "to": "EXPLICACAO_FULLFACE",
+                "rate_pct": 27.3
+            },
+            {
+                "from": "HISTORICO_TRATAMENTOS",
+                "to": "DIFERENCIAIS_TECNICA",
+                "rate_pct": 36.4
+            },
+            {
+                "from": "HISTORICO_TRATAMENTOS",
+                "to": "MEDO_RESULTADO",
+                "rate_pct": 21.2
+            },
+            {
+                "from": "HISTORICO_TRATAMENTOS",
+                "to": "PERGUNTA_INVESTIMENTO",
+                "rate_pct": 6.1
+            },
+            {
+                "from": "HISTORICO_TRATAMENTOS",
+                "to": "INVESTIMENTO_CONSULTA",
+                "rate_pct": 9.1
+            },
+            {
+                "from": "HISTORICO_TRATAMENTOS",
+                "to": "INVESTIMENTO_CIRURGIA_INFORMADO",
+                "rate_pct": 57.6
+            },
+            {
+                "from": "HISTORICO_TRATAMENTOS",
+                "to": "LOCALIZACAO",
+                "rate_pct": 3
+            },
+            {
+                "from": "HISTORICO_TRATAMENTOS",
+                "to": "OFERTA_TELECONSULTA",
+                "rate_pct": 9.1
+            },
+            {
+                "from": "HISTORICO_TRATAMENTOS",
+                "to": "HANDOFF",
+                "rate_pct": 12.1
+            },
+            {
+                "from": "EXPLICACAO_FASTLIFTING",
+                "to": "EXPLICACAO_FULLFACE",
+                "rate_pct": 37.3
+            },
+            {
+                "from": "EXPLICACAO_FASTLIFTING",
+                "to": "DIFERENCIAIS_TECNICA",
+                "rate_pct": 43.1
+            },
+            {
+                "from": "EXPLICACAO_FASTLIFTING",
+                "to": "MEDO_RESULTADO",
+                "rate_pct": 11.8
+            },
+            {
+                "from": "EXPLICACAO_FASTLIFTING",
+                "to": "PERGUNTA_INVESTIMENTO",
+                "rate_pct": 3.9
+            },
+            {
+                "from": "EXPLICACAO_FASTLIFTING",
+                "to": "INVESTIMENTO_CONSULTA",
+                "rate_pct": 5.9
+            },
+            {
+                "from": "EXPLICACAO_FASTLIFTING",
+                "to": "INVESTIMENTO_CIRURGIA_INFORMADO",
+                "rate_pct": 43.1
+            },
+            {
+                "from": "EXPLICACAO_FASTLIFTING",
+                "to": "LOCALIZACAO",
+                "rate_pct": 7.8
+            },
+            {
+                "from": "EXPLICACAO_FASTLIFTING",
+                "to": "OFERTA_TELECONSULTA",
+                "rate_pct": 7.8
+            },
+            {
+                "from": "EXPLICACAO_FASTLIFTING",
+                "to": "HANDOFF",
+                "rate_pct": 5.9
+            },
+            {
+                "from": "EXPLICACAO_FULLFACE",
+                "to": "DIFERENCIAIS_TECNICA",
+                "rate_pct": 33.3
+            },
+            {
+                "from": "EXPLICACAO_FULLFACE",
+                "to": "MEDO_RESULTADO",
+                "rate_pct": 11.1
+            },
+            {
+                "from": "EXPLICACAO_FULLFACE",
+                "to": "PERGUNTA_INVESTIMENTO",
+                "rate_pct": 11.1
+            },
+            {
+                "from": "EXPLICACAO_FULLFACE",
+                "to": "INVESTIMENTO_CONSULTA",
+                "rate_pct": 7.4
+            },
+            {
+                "from": "EXPLICACAO_FULLFACE",
+                "to": "INVESTIMENTO_CIRURGIA_INFORMADO",
+                "rate_pct": 37
+            },
+            {
+                "from": "EXPLICACAO_FULLFACE",
+                "to": "LOCALIZACAO",
+                "rate_pct": 11.1
+            },
+            {
+                "from": "EXPLICACAO_FULLFACE",
+                "to": "OFERTA_TELECONSULTA",
+                "rate_pct": 14.8
+            },
+            {
+                "from": "EXPLICACAO_FULLFACE",
+                "to": "HANDOFF",
+                "rate_pct": 3.7
+            },
+            {
+                "from": "DIFERENCIAIS_TECNICA",
+                "to": "MEDO_RESULTADO",
+                "rate_pct": 10.3
+            },
+            {
+                "from": "DIFERENCIAIS_TECNICA",
+                "to": "PERGUNTA_INVESTIMENTO",
+                "rate_pct": 3.4
+            },
+            {
+                "from": "DIFERENCIAIS_TECNICA",
+                "to": "INVESTIMENTO_CONSULTA",
+                "rate_pct": 6.9
+            },
+            {
+                "from": "DIFERENCIAIS_TECNICA",
+                "to": "INVESTIMENTO_CIRURGIA_INFORMADO",
+                "rate_pct": 37.9
+            },
+            {
+                "from": "DIFERENCIAIS_TECNICA",
+                "to": "LOCALIZACAO",
+                "rate_pct": 10.3
+            },
+            {
+                "from": "DIFERENCIAIS_TECNICA",
+                "to": "OFERTA_TELECONSULTA",
+                "rate_pct": 6.9
+            },
+            {
+                "from": "DIFERENCIAIS_TECNICA",
+                "to": "HANDOFF",
+                "rate_pct": 6.9
+            },
+            {
+                "from": "MEDO_RESULTADO",
+                "to": "PERGUNTA_INVESTIMENTO",
+                "rate_pct": 12.5
+            },
+            {
+                "from": "MEDO_RESULTADO",
+                "to": "INVESTIMENTO_CONSULTA",
+                "rate_pct": 12.5
+            },
+            {
+                "from": "MEDO_RESULTADO",
+                "to": "INVESTIMENTO_CIRURGIA_INFORMADO",
+                "rate_pct": 50
+            },
+            {
+                "from": "MEDO_RESULTADO",
+                "to": "LOCALIZACAO",
+                "rate_pct": 12.5
+            },
+            {
+                "from": "MEDO_RESULTADO",
+                "to": "OFERTA_TELECONSULTA",
+                "rate_pct": 25
+            },
+            {
+                "from": "MEDO_RESULTADO",
+                "to": "HANDOFF",
+                "rate_pct": 12.5
+            },
+            {
+                "from": "PERGUNTA_INVESTIMENTO",
+                "to": "INVESTIMENTO_CONSULTA",
+                "rate_pct": 14.3
+            },
+            {
+                "from": "PERGUNTA_INVESTIMENTO",
+                "to": "INVESTIMENTO_CIRURGIA_INFORMADO",
+                "rate_pct": 42.9
+            },
+            {
+                "from": "PERGUNTA_INVESTIMENTO",
+                "to": "OFERTA_TELECONSULTA",
+                "rate_pct": 14.3
+            },
+            {
+                "from": "INVESTIMENTO_CONSULTA",
+                "to": "INVESTIMENTO_CIRURGIA_INFORMADO",
+                "rate_pct": 25
+            },
+            {
+                "from": "INVESTIMENTO_CIRURGIA_INFORMADO",
+                "to": "LOCALIZACAO",
+                "rate_pct": 4.2
+            },
+            {
+                "from": "INVESTIMENTO_CIRURGIA_INFORMADO",
+                "to": "OFERTA_TELECONSULTA",
+                "rate_pct": 12.5
+            },
+            {
+                "from": "INVESTIMENTO_CIRURGIA_INFORMADO",
+                "to": "HANDOFF",
+                "rate_pct": 4.2
+            },
+            {
+                "from": "LOCALIZACAO",
+                "to": "OFERTA_TELECONSULTA",
+                "rate_pct": 40
+            }
+        ],
+        "top_sequences": [
+            {
+                "sequence": "QUEIXA_PACIENTE",
+                "count": 7
+            },
+            {
+                "sequence": "QUEIXA_PACIENTE>EXPLICACAO_FASTLIFTING",
+                "count": 5
+            },
+            {
+                "sequence": "QUEIXA_PACIENTE>EXPLICACAO_FASTLIFTING>EXPLICACAO_FULLFACE>DIFERENCIAIS_TECNICA",
+                "count": 4
+            },
+            {
+                "sequence": "QUEIXA_PACIENTE>EXPLICACAO_FASTLIFTING>VALIDACAO_QUEIXA",
+                "count": 3
+            },
+            {
+                "sequence": "SAUDACAO>QUEIXA_PACIENTE",
+                "count": 3
+            },
+            {
+                "sequence": "QUEIXA_PACIENTE>EXPLICACAO_FASTLIFTING>SAUDACAO>HISTORICO_TRATAMENTOS>INVESTIMENTO_CIRURGIA_INFORMADO",
+                "count": 1
+            },
+            {
+                "sequence": "QUEIXA_PACIENTE>HISTORICO_TRATAMENTOS>EXPLICACAO_FULLFACE>OFERTA_TELECONSULTA>SAUDACAO",
+                "count": 1
+            },
+            {
+                "sequence": "QUEIXA_PACIENTE>VALIDACAO_QUEIXA>HISTORICO_TRATAMENTOS>EXPLICACAO_FULLFACE>INVESTIMENTO_CIRURGIA_INFORMADO>HANDOFF>INVESTIMENTO_CONSULTA>MEDO_RESULTADO>SAUDACAO",
+                "count": 1
+            },
+            {
+                "sequence": "QUEIXA_PACIENTE>EXPLICACAO_FASTLIFTING>HISTORICO_TRATAMENTOS>DIFERENCIAIS_TECNICA>MEDO_RESULTADO>INVESTIMENTO_CIRURGIA_INFORMADO>OFERTA_TELECONSULTA>SAUDACAO",
+                "count": 1
+            },
+            {
+                "sequence": "QUEIXA_PACIENTE>EXPLICACAO_FASTLIFTING>SAUDACAO>HISTORICO_TRATAMENTOS>EXPLICACAO_FULLFACE>DIFERENCIAIS_TECNICA",
+                "count": 1
+            },
+            {
+                "sequence": "QUEIXA_PACIENTE>EXPLICACAO_FASTLIFTING>EXPLICACAO_FULLFACE>DIFERENCIAIS_TECNICA>SAUDACAO>LOCALIZACAO",
+                "count": 1
+            },
+            {
+                "sequence": "QUEIXA_PACIENTE>EXPLICACAO_FASTLIFTING>EXPLICACAO_FULLFACE>DIFERENCIAIS_TECNICA>HISTORICO_TRATAMENTOS>INVESTIMENTO_CIRURGIA_INFORMADO",
+                "count": 1
+            },
+            {
+                "sequence": "PERGUNTA_INVESTIMENTO>QUEIXA_PACIENTE>HISTORICO_TRATAMENTOS>EXPLICACAO_FASTLIFTING>DIFERENCIAIS_TECNICA>INVESTIMENTO_CONSULTA>INVESTIMENTO_CIRURGIA_INFORMADO",
+                "count": 1
+            },
+            {
+                "sequence": "QUEIXA_PACIENTE>OFERTA_TELECONSULTA>HISTORICO_TRATAMENTOS",
+                "count": 1
+            },
+            {
+                "sequence": "QUEIXA_PACIENTE>VALIDACAO_QUEIXA>HISTORICO_TRATAMENTOS>EXPLICACAO_FASTLIFTING>DIFERENCIAIS_TECNICA>MEDO_RESULTADO",
+                "count": 1
+            }
+        ],
+        "anomalies": {
+            "out_of_order_count": 47
+        },
+        "final_stages_detected": [
+            {
+                "stage_code": "HANDOFF",
+                "stage_label": "HANDOFF",
+                "stage_index": 13,
+                "reason": "explicit_is_final_stage",
+                "score": 100,
+                "converted_count": 4
+            },
+            {
+                "stage_code": "CONTATO_EQUIPE",
+                "stage_label": "CONTATO_EQUIPE",
+                "stage_index": 14,
+                "reason": "explicit_is_final_stage",
+                "score": 100,
+                "converted_count": 2
+            }
+        ],
+        "final_stage_conversion_by_track": [
+            {
+                "stage_code": "HANDOFF",
+                "stage_label": "HANDOFF",
+                "stage_index": 13,
+                "tracks": {
+                    "pure_ia": {
+                        "total_conversations": 26,
+                        "converted_conversations": 0,
+                        "conversion_pct": 0
+                    },
+                    "pure_human": {
+                        "total_conversations": 18,
+                        "converted_conversations": 0,
+                        "conversion_pct": 0
+                    },
+                    "hybrid": {
+                        "total_conversations": 34,
+                        "converted_conversations": 4,
+                        "conversion_pct": 11.8
+                    }
+                }
+            },
+            {
+                "stage_code": "CONTATO_EQUIPE",
+                "stage_label": "CONTATO_EQUIPE",
+                "stage_index": 14,
+                "tracks": {
+                    "pure_ia": {
+                        "total_conversations": 26,
+                        "converted_conversations": 2,
+                        "conversion_pct": 7.7
+                    },
+                    "pure_human": {
+                        "total_conversations": 18,
+                        "converted_conversations": 0,
+                        "conversion_pct": 0
+                    },
+                    "hybrid": {
+                        "total_conversations": 34,
+                        "converted_conversations": 0,
+                        "conversion_pct": 0
+                    }
+                }
+            }
+        ],
+        "daily_track_volume": [
+            {
+                "date": "2026-04-13",
+                "pure_ia": 2,
+                "pure_human": 5,
+                "hybrid": 8
+            },
+            {
+                "date": "2026-04-14",
+                "pure_ia": 6,
+                "pure_human": 3,
+                "hybrid": 8
+            },
+            {
+                "date": "2026-04-15",
+                "pure_ia": 8,
+                "pure_human": 2,
+                "hybrid": 14
+            },
+            {
+                "date": "2026-04-16",
+                "pure_ia": 6,
+                "pure_human": 3,
+                "hybrid": 10
+            },
+            {
+                "date": "2026-04-17",
+                "pure_ia": 3,
+                "pure_human": 3,
+                "hybrid": 6
+            },
+            {
+                "date": "2026-04-18",
+                "pure_ia": 2,
+                "pure_human": 5,
+                "hybrid": 1
+            }
+        ]
+    },
+    "stage_config": {
+        "stages": [
+            {
+                "code": "SAUDACAO",
+                "keywords": [
+                    "Como posso te ajudar",
+                    "Oi, tudo bem",
+                    "Olá, tudo bem",
+                    "Bom dia",
+                    "Boa tarde",
+                    "Boa noite"
+                ],
+                "indicates_professional": false
+            },
+            {
+                "code": "QUEIXA_PACIENTE",
+                "keywords": [
+                    "papada",
+                    "pescoço",
+                    "bigode chinês",
+                    "sobrancelha",
+                    "pálpebra",
+                    "olhar cansado",
+                    "maçã do rosto",
+                    "contorno",
+                    "mandíbula",
+                    "flacidez",
+                    "rejuvenescimento",
+                    "envelhecimento",
+                    "rosto",
+                    "face"
+                ],
+                "indicates_professional": true
+            },
+            {
+                "code": "VALIDACAO_QUEIXA",
+                "keywords": [
+                    "queixa bem comum",
+                    "é muito comum",
+                    "essa região",
+                    "esse incômodo"
+                ],
+                "indicates_professional": true
+            },
+            {
+                "code": "HISTORICO_TRATAMENTOS",
+                "keywords": [
+                    "já realizou algum tratamento",
+                    "já fez algum procedimento",
+                    "já fez injetável",
+                    "já fez botox",
+                    "histórico estético"
+                ],
+                "indicates_professional": true
+            },
+            {
+                "code": "EXPLICACAO_FASTLIFTING",
+                "keywords": [
+                    "Fastlifting",
+                    "Área 1",
+                    "Área 2",
+                    "Área 3",
+                    "tratamento segmentado",
+                    "anestesia local com sedação",
+                    "alta no mesmo dia",
+                    "centro cirúrgico próprio"
+                ],
+                "indicates_professional": true
+            },
+            {
+                "code": "EXPLICACAO_FULLFACE",
+                "keywords": [
+                    "Full Face",
+                    "Deep Plane",
+                    "rejuvenescimento global",
+                    "anestesia geral",
+                    "ambiente hospitalar",
+                    "alta no dia seguinte"
+                ],
+                "indicates_professional": true
+            },
+            {
+                "code": "DIFERENCIAIS_TECNICA",
+                "keywords": [
+                    "resultado natural",
+                    "sem aspecto esticado",
+                    "sem mudar a identidade",
+                    "VASER",
+                    "Bodytite",
+                    "pioneirismo no nordeste",
+                    "recuperação rápida",
+                    "incisões planejadas",
+                    "sedação leve"
+                ],
+                "indicates_professional": true
+            },
+            {
+                "code": "MEDO_RESULTADO",
+                "keywords": [
+                    "medo de ficar artificial",
+                    "medo de mudar demais",
+                    "ficar esticada",
+                    "parecer operada",
+                    "mudar meu rosto",
+                    "seu receio maior",
+                    "mudar demais os seus traços",
+                    "a cirurgia mudou pouco",
+                    "identidade preservada",
+                    "medo da anestesia",
+                    "medo da cicatriz",
+                    "medo de internar",
+                    "vai deixar marca",
+                    "vai aparecer"
+                ],
+                "indicates_professional": true
+            },
+            {
+                "code": "PERGUNTA_INVESTIMENTO",
+                "keywords": [
+                    "quanto custa",
+                    "qual o investimento",
+                    "quanto fica",
+                    "quanto é",
+                    "valor da cirurgia",
+                    "valor da consulta"
+                ],
+                "indicates_professional": true
+            },
+            {
+                "code": "INVESTIMENTO_CONSULTA",
+                "keywords": [
+                    "investimento é R$ 1.000",
+                    "consulta presencial ou teleconsulta",
+                    "planejamento personalizado"
+                ],
+                "indicates_professional": true
+            },
+            {
+                "code": "INVESTIMENTO_CIRURGIA_INFORMADO",
+                "keywords": [
+                    "a partir de R$ 36",
+                    "a partir de R$ 39",
+                    "a partir de R$ 44",
+                    "a partir de R$ 64",
+                    "a partir de R$ 19"
+                ],
+                "indicates_professional": true
+            },
+            {
+                "code": "LOCALIZACAO",
+                "keywords": [
+                    "onde fica a clínica",
+                    "onde você atende",
+                    "qual o endereço",
+                    "moro longe",
+                    "moro em",
+                    "sou de fora",
+                    "fico longe"
+                ],
+                "indicates_professional": true
+            },
+            {
+                "code": "OFERTA_TELECONSULTA",
+                "keywords": [
+                    "opção de começarmos com uma consulta on-line",
+                    "teleconsulta",
+                    "como você mora em",
+                    "facilitar a avaliação"
+                ],
+                "indicates_professional": true
+            },
+            {
+                "code": "HANDOFF",
+                "keywords": [
+                    "me passa seu nome",
+                    "WhatsApp com DDD",
+                    "minha equipe vai te chamar",
+                    "equipe entrar em contato"
+                ],
+                "is_final_stage": true,
+                "indicates_professional": true
+            },
+            {
+                "code": "CONTATO_EQUIPE",
+                "keywords": [
+                    "+55 86 98101-4549",
+                    "falar diretamente com a minha equipe"
+                ],
+                "is_final_stage": true,
+                "indicates_professional": true
+            }
+        ]
+    },
+    "report_md": "## Visão Geral\nO funil de atendimento da clínica de estética médica teve um total de 78 interações. A distribuição entre os diferentes tipos de atendimento foi a seguinte: 26 atendimentos por IA pura, 18 por humano puro e 34 híbridos.\n\n## Trilhas de Atendimento (IA pura / Humano puro / Híbrida)\n- **IA Pura**: 26 atendimentos, com uma taxa de engajamento de 96.2% e 25 com estágio final.\n- **Humano Puro**: 18 atendimentos, com 100% de engajamento e todos os 18 com estágio final.\n- **Híbrida**: 34 atendimentos, também com 100% de engajamento e todos os 34 com estágio final.\n- **Sem Outbound**: 0 atendimentos.\n\n## Análise do Funil (stage reach and biggest drop-offs)\n- **SAUDACAO**: 31 (39.7%)\n- **QUEIXA_PACIENTE**: 77 (98.7%)\n- **VALIDACAO_QUEIXA**: 31 (39.7%)\n- **HISTORICO_TRATAMENTOS**: 33 (42.3%)\n- **EXPLICACAO_FASTLIFTING**: 51 (65.4%)\n- **EXPLICACAO_FULLFACE**: 27 (34.6%)\n- **DIFERENCIAIS_TECNICA**: 29 (37.2%)\n- **MEDO_RESULTADO**: 8 (10.3%)\n- **PERGUNTA_INVESTIMENTO**: 7 (9%)\n- **INVESTIMENTO_CONSULTA**: 4 (5.1%)\n- **INVESTIMENTO_CIRURGIA_INFORMADO**: 24 (30.8%)\n- **LOCALIZACAO**: 5 (6.4%)\n- **OFERTA_TELECONSULTA**: 10 (12.8%)\n- **HANDOFF**: 4 (5.1%)\n- **CONTATO_EQUIPE**: 2 (2.6%)\n\nAs maiores quedas ocorreram entre **QUEIXA_PACIENTE** e **VALIDACAO_QUEIXA** (39.0%) e entre **MEDO_RESULTADO** e **PERGUNTA_INVESTIMENTO** (12.5%).\n\n## Principais Anomalias\nForam identificadas 47 interações fora de ordem, o que pode indicar problemas na sequência de atendimento ou na experiência do usuário.\n\n## Maior Oportunidade de Conversão\nA maior oportunidade de conversão está na transição de **QUEIXA_PACIENTE** para **EXPLICACAO_FASTLIFTING**, que teve uma taxa de conversão de 64.9%. Além disso, a conversão de **VALIDACAO_QUEIXA** para **INVESTIMENTO_CIRURGIA_INFORMADO** foi de 51.6%, mostrando um forte interesse em informações sobre cirurgia.",
+    "run_id": "1dccfde1-02e5-42b2-9375-29d10e566c12"
+}

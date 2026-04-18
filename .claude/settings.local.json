@@ -1,7 +1,17 @@
 {
   "permissions": {
     "allow": [
-      "Bash(find \"C:\\\\Users\\\\user\\\\Documents\\\\GitHub\\\\funnel-analyzer\\\\src\" -type f -name \"*.js\" 2>/dev/null | head -20)"
+      "Bash(find \"C:\\\\Users\\\\user\\\\Documents\\\\GitHub\\\\funnel-analyzer\\\\src\" -type f -name \"*.js\" 2>/dev/null | head -20)",
+      "Bash(npx jest:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(docker --version 2>&1 && docker compose version 2>&1)",
+      "Bash(docker compose:*)",
+      "Bash(curl -s http://localhost/health 2>&1)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000/health 2>&1)",
+      "Bash(curl -sv http://localhost/health 2>&1)",
+      "Bash(curl -sk https://localhost/health 2>&1)",
+      "Bash(curl -sk -w \"\\\\n%{http_code}\" https://localhost/configs/test 2>&1)"
     ]
   }
 }

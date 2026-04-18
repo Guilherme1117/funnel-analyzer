@@ -1,6 +1,101 @@
 'use strict';
 
-function computeMetrics(classified) {
+const { detectFinalStages } = require('./final-stage-detector');
+
+function roundPct(part, total) {
+  return total > 0 ? +((part / total * 100).toFixed(1)) : 0;
+}
+
+function buildStageOrder(classified, stageConfig) {
+  if (!classified || classified.length === 0) return [];
+
+  const ordered = [];
+  const seen = new Set();
+  const configuredStages = Array.isArray(stageConfig?.stages) ? stageConfig.stages : [];
+
+  for (const stage of configuredStages) {
+    if (stage?.code && !seen.has(stage.code)) {
+      seen.add(stage.code);
+      ordered.push(stage.code);
+    }
+  }
+
+  for (const conversation of classified) {
+    for (const stage of (conversation.stages || [])) {
+      if (!seen.has(stage)) {
+        seen.add(stage);
+        ordered.push(stage);
+      }
+    }
+  }
+
+  return ordered;
+}
+
+function buildFinalStageMetrics(classified, stageConfig) {
+  const detected = detectFinalStages(stageConfig);
+  const targetTracks = ['pure_ia', 'pure_human', 'hybrid'];
+  const totalsByTrack = targetTracks.reduce((acc, track) => {
+    acc[track] = classified.filter(c => c.track === track).length;
+    return acc;
+  }, {});
+
+  const finalStagesDetected = detected.map(stage => ({
+    ...stage,
+    converted_count: classified.filter(c => (c.stages || []).includes(stage.stage_code)).length
+  }));
+
+  const finalStageConversionByTrack = detected.map(stage => {
+    const tracks = {};
+    for (const track of targetTracks) {
+      const totalConversations = totalsByTrack[track];
+      const convertedConversations = classified.filter(c =>
+        c.track === track && (c.stages || []).includes(stage.stage_code)
+      ).length;
+
+      tracks[track] = {
+        total_conversations: totalConversations,
+        converted_conversations: convertedConversations,
+        conversion_pct: roundPct(convertedConversations, totalConversations)
+      };
+    }
+
+    return {
+      stage_code: stage.stage_code,
+      stage_label: stage.stage_label,
+      stage_index: stage.stage_index,
+      tracks
+    };
+  });
+
+  const dailyCounts = {};
+  for (const conversation of classified) {
+    if (!targetTracks.includes(conversation.track)) continue;
+
+    for (const date of (conversation.activeDates || [])) {
+      if (!dailyCounts[date]) {
+        dailyCounts[date] = {
+          date,
+          pure_ia: 0,
+          pure_human: 0,
+          hybrid: 0
+        };
+      }
+      dailyCounts[date][conversation.track]++;
+    }
+  }
+
+  const dailyTrackVolume = Object.values(dailyCounts)
+    .sort((a, b) => a.date.localeCompare(b.date));
+
+  return {
+    finalStagesDetected,
+    finalStageConversionByTrack,
+    dailyTrackVolume
+  };
+}
+
+function computeMetrics(classified, stageConfig) {
   const total = classified.length;
   const tracks = {
     pure_ia:     { count: 0, with_last_stage: 0 },
@@ -12,17 +107,7 @@ function computeMetrics(classified) {
   // Build dynamic stage order from all observed stage codes across all conversations.
   // We use the order in which stages first appear across conversations (insertion order).
   // This preserves the LLM-defined stage order since detectStages emits events in message order.
-  const globalStageOrder = [];
-  const seenStageCodes = new Set();
-
-  for (const c of classified) {
-    for (const stage of (c.stages || [])) {
-      if (!seenStageCodes.has(stage)) {
-        seenStageCodes.add(stage);
-        globalStageOrder.push(stage);
-      }
-    }
-  }
+  const globalStageOrder = buildStageOrder(classified, stageConfig);
 
   const stageReach = {};
   const stageByIA = {};
@@ -70,7 +155,7 @@ function computeMetrics(classified) {
   const stages = globalStageOrder.map(code => ({
     code,
     reach: stageReach[code] || 0,
-    reach_pct: total > 0 ? +(((stageReach[code] || 0) / total * 100).toFixed(1)) : 0,
+    reach_pct: roundPct(stageReach[code] || 0, total),
     by_ia: stageByIA[code] || 0,
     by_human: stageByHuman[code] || 0
   }));
@@ -103,13 +188,13 @@ function computeMetrics(classified) {
       const to = globalStageOrder[j];
       const count = pair[to] || 0;
       if (count > 0) {
-        conversion.push({ from, to, rate_pct: +((count / pair.__total * 100).toFixed(1)) });
+        conversion.push({ from, to, rate_pct: roundPct(count, pair.__total) });
       }
     }
   }
 
   for (const v of Object.values(tracks)) {
-    v.engagement_pct = v.count > 0 ? +((v.with_last_stage / v.count * 100).toFixed(1)) : 0;
+    v.engagement_pct = roundPct(v.with_last_stage, v.count);
   }
 
   const top_sequences = Object.entries(sequenceCounts)
@@ -117,7 +202,23 @@ function computeMetrics(classified) {
     .slice(0, 15)
     .map(([sequence, count]) => ({ sequence, count }));
 
-  return { overview: { total }, tracks, stages, conversion, top_sequences, anomalies };
+  const {
+    finalStagesDetected,
+    finalStageConversionByTrack,
+    dailyTrackVolume
+  } = buildFinalStageMetrics(classified, stageConfig);
+
+  return {
+    overview: { total },
+    tracks,
+    stages,
+    conversion,
+    top_sequences,
+    anomalies,
+    final_stages_detected: finalStagesDetected,
+    final_stage_conversion_by_track: finalStageConversionByTrack,
+    daily_track_volume: dailyTrackVolume
+  };
 }
 
 module.exports = { computeMetrics };

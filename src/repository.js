@@ -89,6 +89,11 @@ async function saveRun(runData) {
       conversion:         metrics.conversion,
       top_sequences:      metrics.top_sequences,
       anomalies:          metrics.anomalies,
+      custom_data: {
+        final_stages_detected: metrics.final_stages_detected || [],
+        final_stage_conversion_by_track: metrics.final_stage_conversion_by_track || [],
+        daily_track_volume: metrics.daily_track_volume || []
+      },
       report_md:          reportMd,
       analyzed_at:        new Date().toISOString()
     },

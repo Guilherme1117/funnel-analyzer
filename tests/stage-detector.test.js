@@ -1,6 +1,6 @@
 'use strict';
 
-const { detectStages, classifyTrack } = require('../src/stage-detector');
+const { detectStages, classifyTrack, classifyConversations } = require('../src/stage-detector');
 
 const ia = (txt, ts = '2026-01-01T10:00:00Z') => ({ direction: 'outbound', sent_by: 'IA', content_text: txt, created_at: ts });
 const human = (txt, ts = '2026-01-01T10:01:00Z') => ({ direction: 'outbound', sent_by: null, content_text: txt, created_at: ts });
@@ -136,4 +136,16 @@ test('track is hybrid when both', () => {
 
 test('track is no_outbound when both zero', () => {
   expect(classifyTrack(0, 0)).toBe('no_outbound');
+});
+
+test('classifyConversations includes unique activeDates extracted from message timestamps', () => {
+  const classified = classifyConversations({
+    'chat-1': [
+      patient('oi', '2026-04-01T09:00:00Z'),
+      ia('olá, tudo bem?', '2026-04-01T09:05:00Z'),
+      human('temos horario disponível', '2026-04-02T11:00:00Z')
+    ]
+  }, defaultConfig);
+
+  expect(classified[0].activeDates).toEqual(['2026-04-01', '2026-04-02']);
 });
