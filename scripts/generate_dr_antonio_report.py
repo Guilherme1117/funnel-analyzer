@@ -1044,23 +1044,7 @@ def build_html(data):
       </div>
     </div>
 
-    {footer}
-  </section>
-
-  <section class="page page-compact">
-    <div class="header">
-      <div>
-        <div class="eyebrow">Análise detalhada · Clínica Dr. Antônio</div>
-        <h1>Conversões e padrões de jornada</h1>
-        <div class="subtitle">Transições mais fortes, sequências recorrentes e leituras de otimização</div>
-      </div>
-      <div class="period">
-        <div class="eyebrow">Período analisado</div>
-        <strong>{html_text(period_label)}</strong>
-      </div>
-    </div>
-
-    <div class="two-col" style="margin-top: 12px; grid-template-columns: 1.08fr 0.92fr;">
+    <div class="two-col" style="grid-template-columns: 1.08fr 0.92fr;">
       <div class="section-card">
         <div class="section-title">Principais conversões</div>
         {build_conversion_rows(top_conversions)}
