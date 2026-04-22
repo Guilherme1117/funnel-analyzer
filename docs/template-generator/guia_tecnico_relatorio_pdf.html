@@ -1,0 +1,249 @@
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'DM Sans', sans-serif; }
+
+.wrap { padding: 0.5rem 0 2rem; max-width: 680px; }
+
+.hero { background: #0C447C; border-radius: 10px; padding: 20px 24px; margin-bottom: 20px; }
+.hero h1 { font-size: 15px; font-weight: 600; color: #fff; margin-bottom: 4px; }
+.hero p  { font-size: 12px; color: rgba(255,255,255,0.65); line-height: 1.5; }
+.hero .tags { display: flex; gap: 6px; margin-top: 10px; flex-wrap: wrap; }
+.tag { font-size: 10px; font-weight: 500; padding: 3px 9px; border-radius: 20px; letter-spacing: 0.3px; }
+.tag.py  { background: rgba(255,255,255,0.15); color: #fff; }
+.tag.lib { background: #1D9E75; color: #fff; }
+.tag.new { background: #BA7517; color: #fff; }
+
+.section { margin-bottom: 18px; }
+.section-title { font-size: 11px; font-weight: 600; color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
+.section-title::before { content: ''; display: block; width: 3px; height: 12px; background: #1D9E75; border-radius: 2px; }
+
+.pipeline { display: flex; align-items: center; gap: 0; margin-bottom: 16px; flex-wrap: wrap; gap: 4px; }
+.pill { font-size: 11px; font-weight: 500; padding: 5px 12px; border-radius: 6px; white-space: nowrap; }
+.pill.json  { background: #E6F1FB; color: #0C447C; }
+.pill.py    { background: #E1F5EE; color: #085041; }
+.pill.mpl   { background: #FAEEDA; color: #633806; }
+.pill.rl    { background: #f1efe8; color: #444441; }
+.pill.pdf   { background: #2C2C2A; color: #fff; }
+.arrow { color: var(--color-text-secondary); font-size: 13px; }
+
+.cards { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.card { border: 0.5px solid var(--color-border-tertiary); border-radius: 8px; padding: 12px 14px; }
+.card .label { font-size: 10px; font-weight: 600; color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 6px; }
+.card .name  { font-size: 13px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 4px; }
+.card .desc  { font-size: 11px; color: var(--color-text-secondary); line-height: 1.5; }
+
+.fix-list { display: flex; flex-direction: column; gap: 8px; }
+.fix { display: flex; gap: 10px; align-items: flex-start; padding: 10px 12px; border-radius: 8px; }
+.fix.red   { background: #FAEEDA; }
+.fix.green { background: #E1F5EE; }
+.fix-icon { font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+.fix-title { font-size: 12px; font-weight: 600; color: var(--color-text-primary); margin-bottom: 2px; }
+.fix-desc  { font-size: 11px; color: var(--color-text-secondary); line-height: 1.5; }
+
+.code-block { background: #1e1e2e; border-radius: 8px; padding: 14px 16px; overflow-x: auto; margin-bottom: 10px; }
+.code-block pre { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; line-height: 1.7; color: #cdd6f4; white-space: pre; }
+.cm { color: #6c7086; }
+.ck { color: #cba6f7; }
+.cf { color: #89b4fa; }
+.cs { color: #a6e3a1; }
+.cn { color: #fab387; }
+
+.fns { display: flex; flex-direction: column; gap: 6px; }
+.fn { border-left: 3px solid #378ADD; padding: 8px 12px; border-radius: 0 6px 6px 0; background: var(--color-background-secondary); }
+.fn-sig { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; color: #0C447C; font-weight: 600; margin-bottom: 3px; }
+.fn-desc { font-size: 11px; color: var(--color-text-secondary); line-height: 1.5; }
+
+.fields { display: flex; flex-direction: column; gap: 6px; }
+.field { display: flex; gap: 8px; align-items: flex-start; padding: 8px 12px; background: var(--color-background-secondary); border-radius: 6px; }
+.field-name { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600; color: #1D9E75; min-width: 140px; flex-shrink: 0; }
+.field-desc { font-size: 11px; color: var(--color-text-secondary); line-height: 1.5; }
+.field-new  { font-size: 9px; font-weight: 600; background: #BA7517; color: #fff; padding: 2px 6px; border-radius: 10px; white-space: nowrap; align-self: center; }
+
+.install { background: #1e1e2e; border-radius: 8px; padding: 12px 16px; }
+.install pre { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #a6e3a1; line-height: 1.8; }
+</style>
+
+<div class="wrap">
+
+  <div class="hero">
+    <h1>Gerador de Relatório PDF — LeãoCorp Analytics</h1>
+    <p>O relatório é gerado em Python puro — não é HTML/CSS/JS. Dois motores trabalham juntos: matplotlib desenha os visuais e reportlab monta e exporta o PDF.</p>
+    <div class="tags">
+      <span class="tag py">Python 3.10+</span>
+      <span class="tag lib">reportlab</span>
+      <span class="tag lib">matplotlib</span>
+      <span class="tag lib">numpy</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Fluxo de geração</div>
+    <div class="pipeline">
+      <span class="pill json">JSON da análise</span>
+      <span class="arrow">→</span>
+      <span class="pill py">Python extrai dados</span>
+      <span class="arrow">→</span>
+      <span class="pill mpl">matplotlib gera PNGs</span>
+      <span class="arrow">→</span>
+      <span class="pill rl">reportlab monta layout</span>
+      <span class="arrow">→</span>
+      <span class="pill pdf">PDF A4</span>
+    </div>
+    <p style="font-size:11px;color:var(--color-text-secondary);line-height:1.6;">O truque central: <code style="font-family:monospace;background:var(--color-background-secondary);padding:1px 5px;border-radius:3px;">fig_to_img()</code> converte cada figura matplotlib em PNG dentro de um <code style="font-family:monospace;background:var(--color-background-secondary);padding:1px 5px;border-radius:3px;">io.BytesIO</code> (arquivo virtual em RAM, sem tocar o disco), e reportlab embute esse buffer via <code style="font-family:monospace;background:var(--color-background-secondary);padding:1px 5px;border-radius:3px;">Image(buf, width=..., height=...)</code>.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Instalação</div>
+    <div class="install"><pre>pip install reportlab matplotlib numpy</pre></div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">As duas bibliotecas</div>
+    <div class="cards">
+      <div class="card">
+        <div class="label">matplotlib</div>
+        <div class="name">Gráficos vetoriais</div>
+        <div class="desc">Funil trapezóide, donut, barras empilhadas e jornadas com caixas+setas. Suporta fundo transparente (<code style="font-family:monospace;font-size:10px;">alpha=0</code>) para integrar com o layout sem "caixas brancas".</div>
+      </div>
+      <div class="card">
+        <div class="label">reportlab</div>
+        <div class="name">Layout e exportação PDF</div>
+        <div class="desc">Sistema de <em>story</em>: você empilha elementos (Paragraph, Table, Image, Spacer) numa lista e <code style="font-family:monospace;font-size:10px;">doc.build()</code> distribui automaticamente em páginas A4 respeitando margens.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Funções de gráfico</div>
+    <div class="fns">
+      <div class="fn">
+        <div class="fn-sig">make_funnel_chart(w_in, h_in)</div>
+        <div class="fn-desc">Desenha trapézios empilhados proporcionais à contagem de leads. Cada fase tem largura = min_w + (max_w − min_w) × frac, onde frac = leads_fase / leads_topo. O fundo da fase N é a largura da fase N+1 — isso cria o efeito trapezoidal automaticamente.</div>
+      </div>
+      <div class="fn">
+        <div class="fn-sig">make_journey_chart(w_in, h_in)</div>
+        <div class="fn-desc">Substitui a tabela de sequências ilegível. Usa <code style="font-family:monospace;font-size:10px;">FancyBboxPatch</code> para caixas arredondadas e <code style="font-family:monospace;font-size:10px;">ax.annotate()</code> para setas. Taxas posicionadas em <code style="font-family:monospace;font-size:10px;">by + box_h + 0.025</code> (acima da caixa) para não colidir com texto interno.</div>
+      </div>
+      <div class="fn">
+        <div class="fn-sig">make_daily_chart(w_in, h_in)</div>
+        <div class="fn-desc">Barras empilhadas com <code style="font-family:monospace;font-size:10px;">bottom=daily_ia</code> para sobrepor a série Híbrida sobre a série IA pura. Dados do campo novo <code style="font-family:monospace;font-size:10px;">daily_track_volume</code>.</div>
+      </div>
+      <div class="fn">
+        <div class="fn-sig">make_donut_chart(sz)</div>
+        <div class="fn-desc">Gráfico de pizza com <code style="font-family:monospace;font-size:10px;">wedgeprops={'width': 0.52}</code> que cria o anel. Texto central inserido via <code style="font-family:monospace;font-size:10px;">ax.text(0, 0, ...)</code>.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Helpers de layout reportlab</div>
+    <div class="fns">
+      <div class="fn" style="border-left-color:#1D9E75">
+        <div class="fn-sig" style="color:#085041;">sec_label(text, w)</div>
+        <div class="fn-desc">Título de seção com barra verde via <code style="font-family:monospace;font-size:10px;">('LINEBEFORE',(0,0),(0,0), 2.5, C['green'])</code> no TableStyle.</div>
+      </div>
+      <div class="fn" style="border-left-color:#1D9E75">
+        <div class="fn-sig" style="color:#085041;">kpi_cell(label, val_p, sub)</div>
+        <div class="fn-desc">Card KPI em 3 linhas: label 6.5pt / valor 20pt bold / subtexto 6.5pt. Fundo <code style="font-family:monospace;font-size:10px;">C['light']</code> via BACKGROUND no estilo.</div>
+      </div>
+      <div class="fn" style="border-left-color:#378ADD">
+        <div class="fn-sig" style="color:#0C447C;">final_panel(title, total, ia_pct, ...)</div>
+        <div class="fn-desc">Painel dos campos novos. A "barra de progresso" é uma Table de 1 célula com largura = <code style="font-family:monospace;font-size:10px;">int(pct * 0.75)</code> pt e BACKGROUND colorido — não existe barra nativa no reportlab.</div>
+      </div>
+      <div class="fn" style="border-left-color:#BA7517">
+        <div class="fn-sig" style="color:#633806;">insight_box(bg_hex, acc_hex, ...)</div>
+        <div class="fn-desc">Caixa com fundo tênue + borda lateral colorida (LINEBEFORE). O padding assimétrico cria o visual de "card com accent".</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Campos novos do JSON → elementos do PDF</div>
+    <div class="fields">
+      <div class="field">
+        <span class="field-name">daily_track_volume</span>
+        <span class="field-new">NOVO</span>
+        <span class="field-desc">→ Gráfico de barras empilhadas por dia (make_daily_chart). Mostra pico do dia 17/04 com 19 atendimentos.</span>
+      </div>
+      <div class="field">
+        <span class="field-name">final_stages_detected</span>
+        <span class="field-new">NOVO</span>
+        <span class="field-desc">→ Identificação automática dos estágios finais (HANDOFF_AG, HANDOFF_EB) com converted_count. Alimenta os painéis de "Conversão para etapas finais".</span>
+      </div>
+      <div class="field">
+        <span class="field-name">final_stage_conversion_by_track</span>
+        <span class="field-new">NOVO</span>
+        <span class="field-desc">→ Breakdown IA pura vs Híbrida por etapa final. Alimenta as barras de progresso dentro de final_panel(). Revelou que híbrida converte 5.9× mais em e-book.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Correções de design aplicadas</div>
+    <div class="fix-list">
+      <div class="fix red">
+        <div class="fix-icon">✕</div>
+        <div>
+          <div class="fix-title">Antes: barras horizontais independentes</div>
+          <div class="fix-desc">12 etapas com percentuais soltos (16.7% a 81.1%) sem hierarquia visual. O cérebro não percebia a "jornada de perda".</div>
+        </div>
+      </div>
+      <div class="fix green">
+        <div class="fix-icon">✓</div>
+        <div>
+          <div class="fix-title">Depois: funil trapezoidal com macro-fases</div>
+          <div class="fix-desc">5 fases agrupadas por significado (Contato → Qualificação → Oferta → Coleta → Conversão). Trapézios com largura proporcional aos leads: 54 → 33 → 31 → 20 → 16. A perda é imediatamente visível.</div>
+        </div>
+      </div>
+      <div class="fix red">
+        <div class="fix-icon">✕</div>
+        <div>
+          <div class="fix-title">Antes: tabela de strings "PINV>SAUD>QUEIXA>APRO>..."</div>
+          <div class="fix-desc">Parecia log de programador. Gestor de clínica não lê logs; precisa ver jornadas em português.</div>
+        </div>
+      </div>
+      <div class="fix green">
+        <div class="fix-icon">✓</div>
+        <div>
+          <div class="fix-title">Depois: caixas + setas com taxas de conversão</div>
+          <div class="fix-desc">3 caminhos nomeados em português ("Caminho principal — agendamento") com caixas arredondadas, setas e taxas acima de cada transição. FancyBboxPatch + ax.annotate() do matplotlib.</div>
+        </div>
+      </div>
+      <div class="fix red">
+        <div class="fix-icon">✕</div>
+        <div>
+          <div class="fix-title">Antes: colunas sem largura fixa → "RECORRENTE TE" e "CONVITE\nAVAL."</div>
+          <div class="fix-desc">reportlab distribuía colunas automaticamente, quebrando textos de forma imprevisível.</div>
+        </div>
+      </div>
+      <div class="fix green">
+        <div class="fix-icon">✓</div>
+        <div>
+          <div class="fix-title">Depois: colWidths explícitos em todos os Table</div>
+          <div class="fix-desc"><code style="font-family:monospace;font-size:10px;">CW = [60, 12, 60, 40]</code> — a soma (172pt) é menor que half2 (~261pt), deixando folga. Labels abreviados garantem que nenhum texto ultrapasse a célula.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Para adaptar para outro cliente</div>
+    <div class="code-block"><pre><span class="cm"># 1. Trocar os dados no topo do arquivo:</span>
+funnel_phases = [
+    (<span class="cs">"Contato Inicial"</span>, <span class="cn">78</span>, <span class="cn">100.0</span>, <span class="cs">"Saudação + Queixa"</span>),
+    <span class="cm"># ... suas macro-fases</span>
+]
+
+<span class="cm"># 2. Ajustar daily_ia e daily_hyb:</span>
+daily_ia  = [<span class="cn">3</span>, <span class="cn">5</span>, <span class="cn">8</span>, <span class="cn">4</span>, <span class="cn">12</span>, <span class="cn">6</span>]
+daily_hyb = [<span class="cn">2</span>, <span class="cn">1</span>, <span class="cn">0</span>, <span class="cn">1</span>,  <span class="cn">3</span>, <span class="cn">0</span>]
+
+<span class="cm"># 3. Trocar journeys com os 3 caminhos do novo funil</span>
+<span class="cm"># 4. Mudar o nome do arquivo de saída no SimpleDocTemplate</span>
+<span class="cm"># 5. Rodar: python relatorio_pdf_comentado.py</span></pre></div>
+  </div>
+
+</div>
